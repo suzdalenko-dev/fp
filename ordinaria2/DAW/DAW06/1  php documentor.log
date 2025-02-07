@@ -14,10 +14,25 @@ Instalar PHP phpDocumentor
     apt install php-pear
     pear config-set data_dir /var/www/html
     pear install --alldeps PhpDocumentor
+
+    // ya tiene que estar instalado si no:
+
     wget sourceforge.net/projects/phpdocu/files/PhpDoc/phpDocumentor-1.4.3/PhpDocumentor-1.4.3.tgz
     mkdir /var/www/html/docs
     chown www-data /var/www/html/docs/
+    tar -xvzf PhpDocumentor-1.4.3.tgz -C /var/www/html/docs
     http://localhost/PhpDocumentor/ deberíamos comprobar que la instalación ha sido correcta y tenemos phpDocumentor listo para funcionar.
+
+<?php
+/**
+ * Esta es una función que saluda al mundo.
+ *
+ * @return void
+ */
+function sayHello() {
+    echo "hello world";
+}
+
 
 
 2.0 Plantillas de código en Javadoc y sus componentes
