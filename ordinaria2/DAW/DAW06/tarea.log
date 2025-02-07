@@ -21,4 +21,5 @@
     3.3 Comprobar la versión que se ha instalado de Git.
     3.4 Establecer el nombre de usuario y dirección de correo electrónico en la configuración de Git.
     3.5 Cambiar el editor de texto que trae por defecto Git al editor emacs.
-    3.6 Dentro de la carpeta /var/cache/git/ crear una carpeta para un nuevo proyecto denominado tarea_DAW06 e iniciar un repositorio el nuevo proyecto.
+    3.6 Dentro de la carpeta /var/cache/git/ crear una carpeta para un nuevo proyecto denominado tarea_DAW06 
+        e iniciar un repositorio el nuevo proyecto.
