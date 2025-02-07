@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>En la película de 1968 ... </p>
+    <details>
+        <summary>Spoiler</summary>
+        <p>En la escena final, el protagonista encuentra ... </p>
+    </details>
+
+    <p>Formulario de registro</p>
+
+    <details open>
+        <summary>Datos personales</summary>
+        <p>Nombre: <input type="text" name="nombre"></p>
+    </details>
+
+    <details open>
+        <summary>Datos profesionales</summary>
+        <p>Empresa: <input type="text" name="empresa"></p>
+    </details>
+
+    <p>La etiqueta details:</p>
+
+    <details name="faq">
+        <summary>¿Para qué sirve <details>?</summary>
+        <p>Para crear un elemento desplegable</p>
+    </details>
+
+    <details name="faq">
+        <summary>¿Para qué sirve el atributo open?</summary>
+        <p>Para mostrar abierto inicialmente el elemento details.</p>
+    </details>
+
+    <details name="faq">
+        <summary>¿Para qué sirve el atributo name?</summary>
+        <p>Para que al abrir un elemento details, se cierren los demás.</p>
+    </details>
+
+
+    <p>Berners-Lee creó el HTML basándose en el SGML. La IETF publicó la norma RFC 1866 en 1995 y el W3C publicó la
+        recomendación HTML 3.2 en 1997.</p>
+    <details>
+        <ul>
+            <li>HTML: HyperText Markup Language</li>
+            <li>SGML: Standard Generalized Markup Language</li>
+            <li>IETF: Internet Engineering Task Force</li>
+            <li>W3C: World Wide Web Consortium</li>
+        </ul>
+    </details>
+
+
+    <dialog id="dialog-1">
+        <h1>Ventana de diálogo</h1>
+      
+        <p>Esto es un ejemplo de ventana de diálogo</p>
+      
+        <p>
+          <input type="button" value="Cerrar" onclick="document.getElementById('dialog-1').removeAttribute('open')">
+        </p>
+      </dialog>
+      
+      <p>
+        <input type="button" value="Muestra diálogo" onclick="document.getElementById('dialog-1').setAttribute('open', 'open')">
+      </p>
+</body>
+
+</html>

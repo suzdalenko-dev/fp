@@ -1,0 +1,17 @@
+{
+    "name": "suzdalenko/task06",
+    "autoload": {
+        "psr-4": {
+            "Suzdalenko\\Task06\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "suzdalenko-dev",
+            "email": "alexey.saron@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.9"
+    }
+}

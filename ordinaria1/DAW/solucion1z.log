@@ -1,0 +1,251 @@
+1. Instalar el servidor web Apache desde terminal.
+    apt install apache2 (instalar apache)
+
+
+2. Comprobar que está funcionando el servidor Apache desde terminal.
+    sudo systemctl status apache2 (compruebo el estado http://127.0.0.1/?hola http://localhost/?hola)
+
+
+3. Comprobar que está funcionando el servidor Apache desde navegador.
+    sudo systemctl enable apache2 (habilitar para que se inicie el servidor al arrancar el equipo
+
+4. Cambiar el puerto por el cual está escuchando Apache pasándolo al puerto 82
+    sudo nano /etc/apache2/ports.conf (Listen 82)
+    sudo nano /etc/apache2/sites-available/000-default.conf (80 > 82)
+    sudo systemctl restart apache2
+    
+    guardo la configuración cambiando el puerto de 80 a 82
+    aquí modifico <VirtualHost *:80> a <VirtualHost *:82>
+    
+    y ahora reinicio el servidor:
+    sudo systemctl restart apache2
+    
+    y ahora tengo el servidor en el puerto :82, puedo comprobarlo en el navegador
+    http://localhost:82 :)
+
+
+5. APACHE TOMCAT
+1. Actualizar el Sistema
+Asegúrate de que el sistema esté actualizado:
+
+
+sudo apt update && sudo apt upgrade -y
+2. Instalar Java 17
+Tomcat requiere Java para ejecutarse. Instalaremos OpenJDK 17, que es compatible con las últimas versiones de Tomcat.
+
+Instala OpenJDK 17:
+
+sudo apt install openjdk-17-jdk -y
+Verifica la instalación de Java:
+
+java -version
+Deberías ver algo como:
+
+
+openjdk version "17.x.x"
+Asegúrate de que JAVA_HOME apunte a Java 17:
+
+
+sudo update-alternatives --config java
+La salida te mostrará las versiones instaladas y sus rutas. Copia la ruta de Java 17 (por ejemplo, /usr/lib/jvm/java-17-openjdk-amd64).
+
+3. Crear un Usuario Dedicado para Tomcat
+Crea un usuario del sistema llamado tomcat:
+
+
+sudo useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat
+-r: Crea un usuario del sistema sin permisos de inicio de sesión.
+-m: Crea el directorio de inicio en /opt/tomcat.
+-U: Crea un grupo con el mismo nombre que el usuario.
+-s /bin/false: Desactiva el inicio de sesión del usuario.
+Verifica que el usuario fue creado:
+
+id tomcat
+La salida debe mostrar algo como:
+
+scss
+Copiar código
+uid=1001(tomcat) gid=1001(tomcat) groups=1001(tomcat)
+4. Descargar Apache Tomcat
+Visita el sitio oficial de Apache Tomcat para encontrar la última versión estable:
+Apache Tomcat Download.
+
+Descarga la versión más reciente (ejemplo con Tomcat 10.1.33):
+
+estoy en la raiz y descargo el archivo aqui mismo
+
+wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.33/bin/apache-tomcat-10.1.33.tar.gz
+Extrae el archivo:
+
+sudo tar -xvzf apache-tomcat-10.1.33.tar.gz -C /opt/  (-C especefica el directorio destino)
+Renombra el directorio para simplificar:
+
+eliminar la carpeta tomcat primero
+
+sudo mv /opt/apache-tomcat-10.1.33 /opt/tomcat (con el mv hay que consegir que la estuctura sea /opt/tomcat/bin )
+5. Configurar Permisos
+Cambia el propietario del directorio /opt/tomcat al usuario tomcat:
+
+Ajusta los permisos:
+
+sudo chown -R tomcat:tomcat /opt/tomcat  
+sudo chmod -R 755 /opt/tomcat
+
+Crear un Servicio Systemd para Tomcat
+Crea un archivo de servicio para Tomcat:
+
+sudo nano /etc/systemd/system/tomcat.service
+Añade la siguiente configuración al archivo:
+
+[Unit]
+Description=Apache Tomcat Web Application Container
+After=network.target
+
+[Service]
+Type=forking
+
+Environment=JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+Environment=CATALINA_PID=/opt/tomcat/temp/tomcat.pid
+Environment=CATALINA_HOME=/opt/tomcat
+Environment=CATALINA_BASE=/opt/tomcat
+
+ExecStart=/opt/tomcat/bin/startup.sh
+ExecStop=/opt/tomcat/bin/shutdown.sh
+
+User=tomcat
+Group=tomcat
+
+[Install]
+WantedBy=multi-user.target
+Asegúrate de que JAVA_HOME apunte al directorio correcto para Java 17.
+
+Guarda y cierra el archivo.
+
+Recarga los servicios de systemd:
+
+sudo systemctl daemon-reload
+Inicia y habilita el servicio Tomcat:
+
+sudo systemctl enable tomcat
+sudo systemctl start tomcat
+Verifica el estado del servicio:
+
+sudo systemctl status tomcat
+
+http://127.0.0.1:8080
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instalar el servidor de aplicaciones Tomcat.
+    tomcat version  11.0.1 java -   17 and latersudo
+                    10.1.33         11 and later
+                    9.0.97          8 and later
+
+    java -version (comprobar si tengo java y que version instalada)
+    apt install openjdk-17-jdk (instalar java)
+    sudo apt install openjdk-11-jdk -y
+
+
+    cd /tmp (voy a directorio temporal)
+    wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.81/bin/apache-tomcat-9.0.81.tar.gz (no existe)
+         https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.97/bin/apache-tomcat-9.0.97.tar.gz
+         https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.33/bin/apache-tomcat-10.1.33.tar.gz
+
+    estando en /tmp    
+    tar -xvzf apache-tomcat-10.1.33.tar.gz
+    mkdir /opt/tomcat
+    sudo mv apache-tomcat-10.1.33 /opt/tomcat
+
+    sudo useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat  (creo el grupo y usuario tomcat para el uso seguro de apache tomcat)
+    sudo chown -R tomcat:tomcat /opt/tomcat
+    id tomcat (veo el id de usuario)
+
+    compruebo versiones de java instaladas: 
+    update-alternatives --config java
+    
+    sudo nano /etc/systemd/system/tomcat.service
+
+
+    [Unit]
+    Description=Apache Tomcat Web Application Container
+    After=network.target
+
+    [Service]
+    Type=forking
+
+    Environment=JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/   (esta ruta tiene que estar asi)
+    Environment=CATALINA_PID=/opt/tomcat/temp/tomcat.pid
+    Environment=CATALINA_HOME=/opt/tomcat
+    Environment=CATALINA_BASE=/opt/tomcat
+
+    ExecStart=/opt/tomcat/bin/startup.sh
+    ExecStop=/opt/tomcat/bin/shutdown.sh
+
+    User=tomcat
+    Group=tomcat
+
+    [Install]
+    WantedBy=multi-user.target
+
+
+    sudo systemctl status tomcat.service (comprobar servicio tomcat)
+
+    recargar tomcat:
+    sudo systemctl daemon-reload
+    sudo systemctl start tomcat
+    sudo systemctl status tomcat.service

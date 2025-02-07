@@ -1,0 +1,24 @@
+3. Configurar en el servidor el tipo MIME posible que permite la identificación correcta del vídeo presentación
+ formato flv situado dentro del directorio videos y de nombre entrada.flv.
+
+Paso 1: Verificar la Configuración Actual
+Abre la terminal en tu Ubuntu y verifica la configuración actual de tipos MIME en Apache ejecutando:
+
+
+sudo apt install apache2 -y
+systemctl start apache2
+systemctl start service
+systemctl status apache2
+
+
+archivos: HTML /var/www/html/index.html
+config  : /etc/apache2
+mis arch: /home/vboxuser/Download/
+
+
+nano /etc/apache2/mods-available/mime.conf > AddType video/x-flv .flv
+
+bash
+Copiar código
+sudo systemctl restart apache2
+

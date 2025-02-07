@@ -1,0 +1,13 @@
+Paso 2: Crear usuario para WildFly
+
+Crear un usuario sin acceso a inicio de sesión:
+
+sudo useradd -r -s /sbin/nologin wildfly
+
+Crear un directorio para WildFly (opcional):
+Esto asegura que el usuario wildfly (creado específicamente para ejecutar el servidor WildFly) 
+ tenga los permisos necesarios para leer,
+ escribir y ejecutar archivos en el directorio /opt/wildfly
+
+sudo mkdir /opt/wildfly
+sudo chown wildfly:wildfly /opt/wildfly

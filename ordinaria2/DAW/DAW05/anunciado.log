@@ -1,0 +1,48 @@
+¿Qué te pedimos que hagas?
+Se pide:
+
+1. Configurar dos servidores BIND:
+1.1 Uno como servidor maestro con nombre DNS ns1.empresa-tarea-daw05.local en la IP 192.168.200.250
+1.2 Otro como servidor esclavo con nombre en la IP 192.168.200.249.
+1.3 Con la posibilidad de transferencia de zona entre ellos.
+1.4 Donde la zona del servidor maestro contiene los siguientes registros de recursos:
+    1.5 mail que apunta a la IP 192.168.100.249.
+    1.6 aplicacion-web que es un alias de www.redmine.empresa-tarea-daw05.local.
+    1.7 Donde la transferencia de zona se realiza de forma automática cuando se modifica la zona en el servidor maestro.
+
+2.0 Configurar un servidor OpenLDAP con:
+    2.1 El nombre de dominio empresa-tarea-daw05.local.
+    2.2 Una estructura básica para atender a una unidad organizativa que contenga el departamento de atención al cliente.
+    2.3 Un usuario que pertenezca al departamento de atención al cliente: op1 con contraseña oper.
+
+3.0 Revisar toda la estructura DIT del dominio empresa-tarea-daw05.local a través del servidor DNS esclavo.
+
+
+NOTAS IMPORTANTES:
+
+En el archivo Instalación_Redmine (0.02 MB) puedes encontrar documentación sobre cómo instalar la aplicación Redmine.
+El nombre de la zona es: empresa-tarea-daw05.local.
+Para la solución de la tarea tener en cuenta que la aplicación es accesible mediante la URL 
+    www.redmine.empresa-tarea-daw05.local que apunta a la IP 192.168.200.250.
+El nombre de dominio openldap-empresa-tarea-daw05.local es un alias de www.redmine-empresa-tarea-daw05.local.
+El departamento de atención al cliente será considerado como una unidad organizativa de nombre: operador.
+
+Evaluación de la tarea
+Criterios de evaluación implicados
+a. Se ha descrito la estructura, nomenclatura y funcionalidad de los sistemas de nombres jerárquicos
+b. Se han identificado las necesidades de configuración del servidor de nombres en función de los requerimientos de ejecución de las aplicaciones Web desplegadas.
+d. Se ha analizado la configuración y personalización del servicio de directorio.
+f. Se han especificado los parámetros de configuración en el servicio de directorios adecuados para el proceso de validación de usuarios de la aplicación Web.
+g. Se ha elaborado documentación relativa a las adaptaciones realizadas en los servicios de red.
+¿Cómo valoramos y puntuamos tu tarea?
+Rúbrica de la tarea
+Apartado 1.1: Configurar servidor maestro.
+Apartado 1.2: Configurar servidor esclavo.
+Apartado 1.3: Configurar trasnferencia de zona.
+Apartado 1.4: Registros de recursos.
+Apartado 1.5: Configurar transferencia de zona automática.
+Apartado 2.1: Nombre del dominio en OpenLDAP.
+Apartado 2.2: Estructura organizativa en OpenLDAP.
+Apartado 2.3: Crear usuario en OpenLDAP.
+Apartado 3: Revisar estructura DIT.
+

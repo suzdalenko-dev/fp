@@ -1,0 +1,57 @@
+4. Configurar systemd y el archivo wildfly.conf
+Crear un archivo de configuración para systemd:
+
+sudo nano /etc/systemd/system/wildfly.service
+Añadir el siguiente contenido:
+
+
+[Unit]
+Description=WildFly Application Server
+After=network.target
+
+[Service]
+User=wildfly
+Group=wildfly
+ExecStart=/opt/wildfly/bin/standalone.sh -b 0.0.0.0
+Restart=always
+Environment=JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+[Install]
+WantedBy=multi-user.target
+
+
+Guardar el archivo y cerrar el editor.
+
+Recargar los servicios de systemd:
+
+sudo systemctl daemon-reload
+Iniciar WildFly y habilitarlo para que inicie automáticamente:
+
+
+sudo systemctl start wildfly
+sudo systemctl enable wildfly
+Verificar el estado del servicio:
+
+
+sudo systemctl status wildfly
+5. Configurar la autenticación de WildFly
+Ejecutar el script de administración de usuarios:
+
+
+/opt/wildfly/bin/add-user.sh
+Sigue las instrucciones:
+
+Usuario: Ingresa un nombre de usuario administrativo (por ejemplo, admin).
+Contraseña: Introduce una contraseña segura.
+Rol: Deja el rol predeterminado como ManagementRealm.
+Reinicia WildFly para aplicar los cambios:
+
+
+sudo systemctl restart wildfly
+Prueba de la instalación
+Abre un navegador y accede a la consola de administración de WildFly:
+arduino
+Copiar código
+http://<IP_DE_TU_SERVIDOR>:9990
+Sustituye <IP_DE_TU_SERVIDOR> por la dirección IP de tu máquina.
+Usa las credenciales configuradas para autenticarte.

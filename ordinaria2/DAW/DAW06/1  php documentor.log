@@ -1,0 +1,78 @@
+Instalar apache
+    apt update && apt upgrade -y
+    apt install apache2 -y
+    systemctl status apache2
+    systemctl start apache2
+
+Instalar php y modulos necesarios
+    apt install php libapache2-mod-php php-cli php-xml -y
+    php -v
+    systemctl restart apache2
+
+
+Instalar PHP phpDocumentor
+    apt install php-pear
+    pear config-set data_dir /var/www/html
+    pear install --alldeps PhpDocumentor
+    wget sourceforge.net/projects/phpdocu/files/PhpDoc/phpDocumentor-1.4.3/PhpDocumentor-1.4.3.tgz
+    mkdir /var/www/html/docs
+    chown www-data /var/www/html/docs/
+    http://localhost/PhpDocumentor/ deberíamos comprobar que la instalación ha sido correcta y tenemos phpDocumentor listo para funcionar.
+
+
+2.0 Plantillas de código en Javadoc y sus componentes
+Las plantillas de código en Javadoc se refieren a la forma en que se documentan las clases, métodos y atributos en Java mediante comentarios estructurados.
+
+Componentes de una plantilla Javadoc
+Encabezado de clase o método:
+Se ubica antes de la declaración de la clase, método o atributo.
+
+java
+Copiar
+Editar
+/**
+ * Descripción breve de la clase o método.
+ *
+ * Descripción más detallada sobre su propósito y uso.
+ *
+ * @param parametro1 Descripción del primer parámetro (si aplica).
+ * @return Descripción del valor de retorno (si aplica).
+ * @throws Excepcion1 Descripción de la excepción lanzada (si aplica).
+ */
+Etiquetas más comunes en Javadoc:
+
+@author → Indica el autor del código.
+@version → Especifica la versión del código.
+@param → Describe los parámetros de un método.
+@return → Explica lo que devuelve un método.
+@throws → Indica las excepciones que puede lanzar un método.
+Ejemplo en Java:
+
+java
+Copiar
+Editar
+/**
+ * Clase que representa a una persona.
+ * @author Juan Pérez
+ * @version 1.0
+ */
+public class Persona {
+
+    private String nombre;
+
+    /**
+     * Constructor de la clase Persona.
+     * @param nombre Nombre de la persona.
+     */
+    public Persona(String nombre) {
+        this.nombre = nombre;
+    }
+
+    /**
+     * Obtiene el nombre de la persona.
+     * @return El nombre de la persona.
+     */
+    public String getNombre() {
+        return nombre;
+    }
+}

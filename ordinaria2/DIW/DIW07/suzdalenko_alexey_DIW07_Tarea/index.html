@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suzdalenko Alexey DIW07 Tarea</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        h1 {
+            background-color: orange;
+            animation-duration: 3s;
+            animation-name: estiloAnimacion;
+            animation-iteration-count: 3;
+        }
+        @keyframes estiloAnimacion {
+            from {
+                margin-left: 50%;
+                width: 100%;
+                font-style: oblique;
+            }
+            50% {
+                margin-left: 10%;
+                width: 50%;
+                font-style: oblique;
+            }
+            to {
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+        h1{
+            text-decoration: none;
+            color: blue;
+            transition: color 3s linear;
+            transition: margin-left 2s ease-in-out;
+            font-size: 33px;
+        }
+        h1:hover {
+            color: green;
+            margin-left: 100px;
+        }
+    </style>
+
+
+    <!-- Actividad 1 -->
+    <h1 id="titulo">Titulo</h1>
+
+    <!-- Actividad 2 -->
+    <p>Este es un párrafo de presentación con una transición al pasar el ratón por encima.</p>
+
+    <!-- Actividad 3 -->
+    <div class="gallery">
+        <img src="1.jpg" alt="Imagen 1">
+        <img src="2.jpg" alt="Imagen 2">
+        <img src="3.jpg" alt="Imagen 3">
+    </div>
+
+    <!-- Actividad 4 -->
+    <div class="rectangle"></div>
+
+    <!-- Actividad 5 -->
+    <div class="square"></div>
+    <div class="square"></div>
+</body>
+
+</html>

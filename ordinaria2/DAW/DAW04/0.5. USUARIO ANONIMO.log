@@ -1,0 +1,25 @@
+mejor crear usuario anonimo lo primero, por que si no - no entra despues !!!
+
+la carpeta de usuario anonimo es /srv/ftp || /etc/fpt ?¿
+
+para activar el usuario anonimo
+    cd /etc/proftpd/
+    nano proftpd.conf
+    y tengo que descomentar todo relacionado con el usuario anonimo
+
+    <Anonymous ftp>
+        User
+        Group
+        UserAlias
+        Dir...
+        Dir...
+        Require..
+        MaxCli..
+        DisplayLo
+        DisplayCh
+        <Directory *>
+            <Limit Write>
+                DenyAll
+            </Limit>
+        </Directory>
+    </Anonymous>

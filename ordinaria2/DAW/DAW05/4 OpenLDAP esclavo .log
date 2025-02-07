@@ -1,0 +1,30 @@
+Pasos en el Servidor Esclavo
+1️⃣ Instala ldap-utils (herramientas de cliente LDAP):
+apt update
+apt install ldap-utils -y
+
+2️⃣ Realiza la consulta LDAP al servidor maestro (192.168.200.250):
+ldapsearch -x -LLL -H ldap://192.168.200.250 -b dc=empresa-tarea-daw05,dc=local
+
+Para ver la información de la organización, puedes ejecutar:
+o=atencion_cliente representa una organización (organization) dentro de la estructura del directorio LDAP.
+
+ldapsearch -x -LLL -H ldap://192.168.200.250 -b "o=atencion_cliente,dc=empresa-tarea-daw05,dc=local"
+
+3️⃣ Comprobar un usuario específico (op1):
+ldapsearch -x -LLL -H ldap://192.168.200.250 -b dc=empresa-tarea-daw05,dc=local "(uid=op1)"
+
+4️⃣ Verificar autenticación con el usuario op1:
+ldapwhoami -x -D "uid=op1,ou=operador,dc=empresa-tarea-daw05,dc=local" -w oper
+
+¿Por qué funciona sin instalar OpenLDAP en el esclavo?
+🔹 ldap-utils solo instala herramientas cliente, no el servidor LDAP.
+🔹 El servidor maestro (192.168.200.250) responde a las consultas.
+🔹 No necesitas replicación (syncrepl), solo consultas remotas.
+
+✅ Más fácil y rápido si solo necesitas verificar usuarios en LDAP.
+
+
+
+o=atencion_cliente  => Representa una organización en LDAP.
+ou=operador	        => Representa una unidad organizativa dentro de la organización o el dominio LDAP.

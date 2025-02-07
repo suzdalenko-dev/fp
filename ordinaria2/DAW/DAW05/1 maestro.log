@@ -1,0 +1,125 @@
+---------------------------------!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!---------------------------------
+otra forma de hacerlo en debian 10
+tengo que tener dos adaptadores de red en la maquina virtual
+
+nano /etc/network/interfaces
+
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# Configuración del Adaptador 1 (NAT) para acceso a internet
+auto enp0s3
+iface enp0s3 inet dhcp
+
+# Configuración del Adaptador 2 (Red Interna)
+auto enp0s8
+iface enp0s8 inet static
+    address 192.168.200.250
+    netmask 255.255.255.0
+    gateway 192.168.200.1
+    dns-nameservers 192.168.200.250
+
+
+
+sudo systemctl restart networking
+
+ip a
+
+ping 8.8.8.8
+ping www.google.com
+
+ping 192.168.200.250
+
+
+Paso 1: Instalar BIND
+sudo apt update
+sudo apt install bind9 bind9utils bind9-doc
+sudo systemctl status bind9
+sudo systemctl start bind9
+sudo systemctl enable bind9
+
+
+Paso 2: Configurar el servidor BIND como maestro
+nano /etc/bind/named.conf.local
+
+zone "empresa-tarea-daw05.local" {
+    type master;
+    file "/etc/bind/db.empresa-tarea-daw05.local";
+    allow-transfer { 192.168.200.249; };        // IP del servidor esclavo
+    notify yes;                                 // Notifica automáticamente al esclavo los cambios en la zona
+};
+
+zone "empresa-tarea-daw05.local" {                    // Nombre de la zona (tu dominio)
+    type master;                                      // Indica que este servidor es el maestro de esta zona
+    file "/etc/bind/db.empresa-tarea-daw05.local";    // Archivo que contiene los registros DNS
+    allow-transfer { 192.168.200.249; };              // Permite transferencia de zona al servidor esclavo
+    notify yes;                                       // Notifica automáticamente al esclavo los cambios en la zona
+};
+
+
+
+Paso 3: Crear el archivo de zona
+nano /etc/resolv.conf          # no hacer nada en teoria se hara automaticamente
+  nameserver 192.168.200.250
+  nameserver 127.0.0.1
+  chattr +i /etc/resolv.conf   # Bloquea el archivo para que no se pueda modificar *(para desbloquear sudo chattr -i /etc/resolv.conf)*
+
+
+
+sudo cp /etc/bind/db.local /etc/bind/db.empresa-tarea-daw05.local
+
+nano /etc/bind/db.empresa-tarea-daw05.local
+
+
+
+; Archivo de zona para empresa-tarea-daw05.local
+$TTL    604800
+@       IN      SOA     ns1.empresa-tarea-daw05.local. root.empresa-tarea-daw05.local. (
+                          2025012203 ; Serial (número único que se incrementa en cada cambio)
+                          604800     ; Refresh (tiempo para que los esclavos sincronicen)
+                          86400      ; Retry (reintento si falla la sincronización)
+                          2419200    ; Expire (tiempo para que los esclavos descarten la zona si no hay contacto)
+                          604800 )   ; Negative Cache TTL (tiempo de vida para respuestas negativas)
+
+; Nameservers
+@       IN      NS      ns1.empresa-tarea-daw05.local. ; Servidor DNS principal para la zona
+
+; A records (direcciones IP para nombres específicos)
+@       IN      A       192.168.200.250 ; Dirección IP del dominio base empresa-tarea-daw05.local
+ns1     IN      A       192.168.200.250 ; Dirección IP del servidor maestro
+mail    IN      A       192.168.100.249 ; Dirección IP del servidor de correo
+www     IN      A       192.168.200.250 ; Dirección IP del servidor web
+www.redmine IN A        192.168.200.250 ; Dirección IP de redmine
+suzdal IN A 192.168.200.250
+
+
+; CNAME record (alias de otro nombre)
+aplicacion-web IN CNAME www.redmine.empresa-tarea-daw05.local. ; Alias para redmine aplicacion-web.empresa-tarea-daw05.local
+openldap IN CNAME www.redmine.empresa-tarea-daw05.local. ; Alias para redmine openldap.empresa-tarea-daw05.local
+
+
+
+Paso 4: Verificar la configuración
+sudo named-checkconf
+
+sudo named-checkzone empresa-tarea-daw05.local /etc/bind/db.empresa-tarea-daw05.local
+
+
+Paso 5: Reiniciar el servicio BIND
+sudo systemctl restart bind9
+
+
+Paso 6: Probar la configuración
+nslookup ns1.empresa-tarea-daw05.local 192.168.200.250
+nslookup mail.empresa-tarea-daw05.local 192.168.200.250
+nslookup aplicacion-web.empresa-tarea-daw05.local 192.168.200.250
+dig google.com
+host google.com 
+
+
+nano /etc/hosts # añoadir a lo que ya hay
+
+192.168.200.250 empresa-tarea-daw05.local
+127.0.0.1 empresa-tarea-daw05.local

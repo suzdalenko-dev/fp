@@ -1,0 +1,24 @@
+0.0 instala y correctamente configura apache y php en maquina virtual Debian / Ubuntu, 
+    para despues proceder a la instalacion de phpDocumentor. 
+
+1.0 Indica cada uno de los pasos que deberías de dar para proceder a la instalación de phpDocumentor, 
+        suponiendo que vas a partir de una máquina en la que tienes instalado la distribución Debian / Ubuntu actual, 
+        y en la que ya están instalados y correctamente configurados apache y php.
+
+2.0 Explica en qué consisten las plantillas de código en el caso de Javadoc y cada uno de sus componentes.
+
+3.0 Dispones de una máquina que cuenta con el sistema operativo Debian / Ubuntu recientemente actualizado, 
+    en la que está el entorno de red configurado y, 
+    además, dispones de conexión a Internet y estás trabajando con la cuenta del usuario root . 
+    Indica cada uno de los pasos y comandos implicados en ellos para conseguir hacer lo siguiente:
+
+    3.1 Suponiendo que el sistema ya tiene instalado las siguientes librerías de las que Git depende: curl, zlib, openssl, expat, y libiconv, 
+        pasos a realizar la compilación e instalación de Git considerando que ya disponemos del paquete git-1.7.6.tar.bz2
+
+    3.2 Cómo obtener Git a través del propio Git para futuras actualizaciones, 
+        de manera que descargaría automáticamente el código fuente desde su repositorio.
+
+    3.3 Comprobar la versión que se ha instalado de Git.
+    3.4 Establecer el nombre de usuario y dirección de correo electrónico en la configuración de Git.
+    3.5 Cambiar el editor de texto que trae por defecto Git al editor emacs.
+    3.6 Dentro de la carpeta /var/cache/git/ crear una carpeta para un nuevo proyecto denominado tarea_DAW06 e iniciar un repositorio el nuevo proyecto.

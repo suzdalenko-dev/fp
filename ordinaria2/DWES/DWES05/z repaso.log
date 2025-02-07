@@ -1,0 +1,45 @@
+composer create-project --prefer-dist philo/laravel-blade blade-project
+
+cd blade-project
+
+composer require fakerphp/faker
+
+composer dump-autoload --optimize
+
+composer dump-autoload
+
+
+index.php:
+<?php
+
+require 'vendor/autoload.php';
+
+use Philo\Blade\Blade;
+use Faker\Factory as Faker;
+
+$views = __DIR__ . '/views';
+$cache = __DIR__ . '/cache';
+
+$blade = new Blade($views, $cache);
+$faker = Faker::create();
+
+echo $blade->view()->make('example', ['faker' => $faker])->render();
+
+
+
+views/example.blade.php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+</head>
+<body>
+    <h1>Welcome, {{ $faker->name }}</h1>
+    <p>Your random email is: {{ $faker->email }}</p>
+</body>
+</html>
+
+
+php -S localhost:8000

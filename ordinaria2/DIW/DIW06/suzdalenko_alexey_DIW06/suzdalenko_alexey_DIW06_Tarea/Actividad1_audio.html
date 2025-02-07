@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 1</title>
+</head>
+
+<body>
+    <p>Actividad 1 - AUDIO</p>
+    <ul>
+        <li>
+            <!-- primer audio con reproduccion automatica MP3 -->
+            <audio controls autoplay>
+                <source src="1.mp3" type="audio/mpeg">
+                Tu navegador no soporta el formato MP3.
+            </audio>
+            <!-- boton de descarga del archivo mp3 -->
+            <a href="1.mp3" download="1.mp3"><button>Descargar MP3</button></a>
+        </li>
+        <li>
+            <!-- primer audio con reproduccion automatica OGG -->
+            <audio controls>
+                <source src="2.ogg" type="audio/ogg">
+                Tu navegador no soporta el formato OGG.
+            </audio>
+            <!-- boton de descarga de archivo OGG -->
+            <a href="2.ogg" download="2.ogg"><button>Descargar OGG</button></a>
+        </li>
+    </ul>
+    <p>Nota: La reproducción automática del primer audio puede depender de la configuración del navegador.
+        <br>
+        Algunos navegadores requieren interacción del usuario para reproducir audio automáticamente.
+    </p>
+    <style>
+        * {
+            font-family: Consolas, "sans-serif";
+        }
+        button:hover {
+            cursor: pointer;
+        }
+        li{
+            list-style: none;
+        }
+    </style>
+</body>
+
+</html>

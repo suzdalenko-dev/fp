@@ -1,0 +1,63 @@
+apt update && sudo apt upgrade -y
+apt install mariadb-server
+
+mysql -u root -p
+    CREATE DATABASE redmine CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+    CREATE USER 'redmine'@'localhost' IDENTIFIED BY 'redmine';
+    GRANT ALL PRIVILEGES ON redmine.* TO 'redmine'@'localhost';
+    FLUSH PRIVILEGES;
+    EXIT;
+
+
+apt install apache2 libapache2-mod-passenger
+ifconfig # para saber la ip
+ip a     # para saber la ip
+
+
+apt install redmine
+
+gem update
+gem install bundler
+
+nano /etc/apache2/mods-available/passenger.conf
+    <IfModule mod_passenger.c>
+        PassengerDefaultUser www-data
+        PassengerRoot /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini
+        PassengerDefaultRuby /usr/bin/ruby
+    </IfModule>
+
+
+ln -s /usr/share/redmine/public /var/www/html/redmine
+
+nano /etc/apache2/sites-available/redmine.conf
+    <VirtualHost *:80>
+        ServerAdmin redmine
+        DocumentRoot /var/www/html/redmine
+        ServerName 192.168.200.250
+        ServerAlias empresa-tarea-daw05.local aplicacion-web.empresa-tarea-daw05.local www.redmine.empresa-tarea-daw05.local
+
+        RailsBaseURI /redmine
+        PassengerAppRoot /usr/share/redmine
+
+        <Directory /var/www/html/redmine>
+            Require all granted
+            Options -MultiViews
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/redmine_error.log
+        CustomLog ${APACHE_LOG_DIR}/redmine_access.log combined
+    </VirtualHost>
+
+
+
+touch /usr/share/redmine/Gemfile.local
+
+chown www-data:www-data /usr/share/redmine/Gemfile.local
+sudo chmod -R 755 /var/www/html/redmine
+
+a2ensite redmine.conf
+
+systemctl restart apache2
+
+
+

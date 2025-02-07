@@ -1,0 +1,81 @@
+Paso 3: Descargar e instalar WildFly 19.0.0 Final
+Ir al directorio /opt:
+
+
+cd /opt
+
+Descargar WildFly 19.0.0 Final:
+
+sudo wget wget https://github.com/wildfly/wildfly/releases/download/28.0.1.Final/wildfly-28.0.1.Final.tar.gz
+
+Extraer el archivo descargado:
+sudo tar -xvzf wildfly-28.0.1.Final.tar.gz
+sudo mv wildfly-28.0.1.Final wildfly
+
+Eliminar el archivo comprimido:
+
+sudo rm wildfly-19.0.0.Final.tar.gz
+Cambiar la propiedad de los archivos al usuario wildfly:
+
+sudo chown -R wildfly:wildfly /opt/wildfly
+
+
+
+
+
+
+
+
+
+
+Paso 3: SEGUNDA VERSION DE INSTALACION DE LA APLICACION WILD-FLY
+Paso 2: Descargar WildFly 19.0.0 Final
+Ir al directorio /opt, donde instalaremos WildFly:
+
+bash
+Copiar código
+cd /opt
+Descargar WildFly 19.0.0 Final desde su repositorio oficial:
+
+bash
+Copiar código
+sudo wget wget https://github.com/wildfly/wildfly/releases/download/28.0.1.Final/wildfly-28.0.1.Final.tar.gz
+Este comando descarga el archivo comprimido de WildFly directamente desde el repositorio oficial de GitHub.
+
+Verificar que el archivo se haya descargado correctamente:
+
+bash
+Copiar código
+ls -l
+Deberías ver el archivo wildfly-19.0.0.Final.tar.gz.
+
+Paso 3: Instalar WildFly
+Extraer el archivo comprimido:
+
+bash
+Copiar código
+sudo tar -xvzf wildfly-19.0.0.Final.tar.gz
+Esto descomprime el contenido de WildFly en el directorio actual (/opt).
+
+Renombrar la carpeta extraída para simplificar el acceso:
+
+bash
+Copiar código
+sudo mv wildfly-19.0.0.Final wildfly
+Esto renombra la carpeta a wildfly.
+
+Eliminar el archivo comprimido (opcional):
+
+bash
+Copiar código
+sudo rm wildfly-19.0.0.Final.tar.gz
+Asignar la propiedad de los archivos al usuario de WildFly (si lo has creado):
+
+bash
+Copiar código
+sudo chown -R wildfly:wildfly /opt/wildfly
+Si no has creado el usuario, puedes usar root:
+
+bash
+Copiar código
+sudo chown -R root:root /opt/wildfly

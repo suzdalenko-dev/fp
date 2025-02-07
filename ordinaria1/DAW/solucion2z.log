@@ -1,0 +1,237 @@
+Apartado 1 y 2: http://www.empresa-tarea-daw02.local http://empresa-tarea-daw02.local
+                http://www.suzdalenko              http://suzdalenko
+sudo apt update
+sudo apt upgrade -y
+
+sudo apt install apache2 -y
+sudo systemctl status apache2
+sudo systemctl restart apache2
+
+
+Configurar un virtualhost basado en nombre denominado empresa-tarea-daw02 (suzdalenko) que permita
+el acceso de la página web de la empresa en Internet al directorio del servidor web: todoempresa-tarea-daw02 (suzdalenko)
+Antes de comenzar, verificamos el contenido del directorio /var/www:
+ ls -lah /var/www
+Comprobamos que solo existe el directorio por defecto, /var/www/html, y creamos el directorio del
+servidor web /var/www/todo-empresa-tarea-daw02: (aqui estara index.html)
+ sudo mkdir /var/www/todo-empresa-tarea-daw02 (suzdalenko)
+
+
+Creamos el archivo de configuración del VirtualHost:
+ sudo nano /etc/apache2/sites-available/empresa-tarea-daw02.conf (suzdal.conf)
+Con el contenido:
+ <VirtualHost *:80>
+ DocumentRoot /var/www/todo-empresa-tarea-daw02
+ ServerName www.empresa-tarea-daw02.local
+ ServerAlias empresa-tarea-daw02.local
+ </VirtualHost>
+
+
+Habilitamos el VirtualHost recién creado:
+ sudo a2ensite empresa-tarea-daw02.conf
+Y recargamos el servicio apache2:
+ sudo systemctl reload apache2
+
+
+Para editar dicho archivo ejecutamos:
+ sudo nano /etc/hosts
+Y añadimos las líneas:
+ 127.0.0.1 www.empresa-tarea-daw02.local
+ 127.0.0.1 empresa-tarea-daw02.local
+
+
+Creamos un index.html de ejemplo dentro de /var/www/todo-empresa-tarea-daw02 y comprobamos
+que las URL que identifican a la empresa, http://www.empresa-tarea-daw02.local y http://empresa-tareadaw02.local, funcionan:
+
+
+
+
+
+
+
+Apartado 3:
+Configurar en el servidor el tipo MIME posible que permite la identificación correcta del
+vídeo presentación formato flv situado dentro del directorio videos y de nombre entrada.flv.
+En el servidor web Apache existe el archivo /etc/apache2/mods-available/mime.conf:
+ sudo nano /etc/apache2/mods-available/mime.conf (aqui encontramos una referencia al archivo /etc/mime.types, el cual contiene
+    la lista de tipo MIME reconocidos por el servidor,
+    esta arriba del todo:
+        TypesConfig /etc/mime.types
+    ) 
+
+Donde veremos una referencia al archivo /etc/mime.types, el cual contiene la lista de tipos MIME
+reconocidos por el servidor:
+ sudo nano /etc/mime.types
+
+En dicho archivo encontraremos una referencia al tipo de archivos flv:
+ video/x-flv flv
+Lo que indica que los ficheros de tipo flv ya están reconocidos por el servidor como ficheros de
+vídeo. Si no existiera dicha línea habría que añadirla manualmente y reiniciar el servidor apache.
+
+
+
+
+
+
+
+Apartado 4
+Crear el subdirectorio todo-empresa-tarea-daw02/delimitado teniendo en cuenta que:
+• El directorio todo-empresa-tarea-daw02 permite el acceso a cualquier usuario.
+• El subdirectorio todo-empresa-tarea-daw02/delimitado permite el acceso solamente al
+personal de la empresa que tenga el rol: admin.
+En primer lugar, creamos el subdirectorio delimitado:
+ sudo mkdir /var/www/todo-empresa-tarea-daw02/delimitado
+
+Creamos un fichero .htaccess dentro del directorio anterior:
+ sudo nano /var/www/todo-empresa-tarea-daw02/delimitado/.htaccess
+
+Con el siguiente contenido:
+    AuthType Basic
+    AuthName "Acceso limitado"
+    AuthUserFile /etc/apache2/passwords
+    AuthGroupFile /etc/apache2/groups
+    Require group admin
+
+Siguiendo las indicaciones de la documentación de Apache:
+https://httpd.apache.org/docs/current/en/howto/auth.html#lettingmorethanonepersonin
+
+Para usar archivos .htaccess será necesario tener una configuración en el servidor que permita poner
+directivas de autenticación en estos archivos mediante la directiva AllowOverride:
+ sudo nano /etc/apache2/sites-available/empresa-tarea-daw02.conf
+Donde añadimos codigo completo seria:
+
+<VirtualHost *:80>
+    ServerName www.empresa-tarea-daw02.local
+    DocumentRoot /var/www/todo-empresa-tarea-daw02
+    ServerAlias empresa-tarea-daw02.local
+<Directory /var/www/todo-empresa-tarea-daw02>
+    Require all granted
+</Directory>
+<Directory /var/www/todo-empresa-tarea-daw02/delimitado>
+    AuthType Basic
+    AuthName "Acceso Restringido"
+    AuthUserFile /etc/apache2/.htpasswd
+    Require valid-user
+</Directory>
+</VirtualHost>
+
+sudo a2ensite empresa-tarea-daw02.conf
+
+Creamos un par de usuarios en el archivo /etc/apache2/.htpasswd:
+ sudo htpasswd -c /etc/apache2/.htpasswd alexey
+ sudo htpasswd /etc/apache2/.htpasswd maria
+ o
+ htpasswod -c .htpasswod alexey ( si estoy dentro de /etc/apache2/ )
+El parámetro -c se usará solo en el momento de crear el archivo inicial. Para los siguientes usuarios se omitirá.
+FIN
+
+
+
+
+
+Apartado 5 Pemitir el protocolo HTTPS en el virtualhost https://suzdalenko
+
+a.) creo una carpeta en /var/www/suzdalenko en cual echo > "hello world">index.html
+b.) creo file /etc/apache2/sites-available/suzdalenko.conf contenido:
+    <VirtualHost *:80>
+        DocumentRoot /var/www/suzdalenko
+        ServerName www.suzdalenko.local
+        ServerAlias suzdalenko.local
+    </VirtualHost>
+
+    <VirtualHost *:443>
+        DocumentRoot /var/www/suzdalenko
+        ServerName www.suzdalenko.local
+        ServerAlias suzdalenko.local
+        SSLEngine on
+        SSLCertificateFile /etc/apache2/ssl/empresa.crt 
+        SSLCertificateKeyFile /etc/apache2/ssl/empresa.key
+    </VirtualHost>
+
+    a2ensite suzdalenko.conf
+    systemctl reload apache2
+c.) editar /etc/hosts contenido:
+    127.0.0.1 suzdalenko.local
+
+solucion buena en el PDF , IMPORTANTE A LA HORA DE CREAR CERTIFICADO INDICAR EL HOST , lo esta escrito en el PDF !!!
+
+ FIN
+
+
+
+
+
+
+
+
+
+Apartado 6
+Configurar los archivos de registro como sigue:
+• Identificación log de acceso: empresa-tarea-daw02-access.log
+• Identificación log de error: empresa-tarea-daw02-error.log
+• Alias logformat: combined
+
+Para configurar los archivos de registro editaremos el fichero de configuración del virtualhost:
+ sudo nano /etc/apache2/sites-available/suzdalenko.conf
+
+Donde añadiremos las siguientes líneas dentro de cada virtualhost:
+ ErrorLog ${APACHE_LOG_DIR}/suzdalenko.log
+ CustomLog ${APACHE_LOG_DIR}/suzdalenko2.log combined
+
+ a2ensite /etc/apache2/sites-available/suzdalenko.conf
+
+ErrorLog define la ubicación del archivo de registro de errores.
+CustomLog define la ubicación del archivo de registro de acceso y el formato de registro.
+${APACHE_LOG_DIR} es una variable de entorno que generalmente apunta a 
+    /var/log/apache2. (aqui estan los logs)
+
+Podemos comprobar que ambos ficheros de log se han creado en /var/log/apache2:
+ ls -lah /var/log/apache2
+
+
+
+
+
+
+
+Apartado 7
+Rotar logs por intervalo temporal: cada 24 horas.
+En Ubuntu podemos encontrar los siguientes archivos de configuración para logrotate:
+1. /etc/logrotate.conf: Define los parámetros globales por defecto de logrotate.
+    cat /etc/logrotate.conf
+
+/etc/logrotate.d/apache2: Define el rotado de logs para apache2. Los parámetros que no se
+encuentren aquí usarán su valor del fichero /etc/logrotate.conf.
+
+nano /etc/logrotate.d/apache2
+
+Detalles de los parámetros:
+• daily: Rota los logs cada 24 horas.
+• missingok: No da error si el archivo de log no existe.
+• rotate 14: Mantiene los últimos 14 archivos de log.
+• compress: Comprime los archivos de log antiguos.
+• delaycompress: Retrasa la compresión hasta la siguiente rotación.
+• notifempty: No rota el log si está vacío.
+• create 640 root adm: Crea nuevos archivos de log con permisos 640 y asigna al usuario root
+y al grupo adm.
+• sharedscripts: Se asegura de que los scripts prerotate y postrotate se ejecuten solo una vez,
+no por cada archivo de log rotado.
+• prerotate y endscript: Se ejecutan antes de la rotación de los archivos de log. En este caso,
+ejecuta scripts en /etc/logrotate.d/httpd-prerotate si ese directorio existe.
+• postrotate y endscript: Se ejecutan después de la rotación de los archivos de log. Aquí se
+recarga Apache si el proceso está activo, utilizando invoke-rc.d y registrando el resultado
+con logg
+LA VERSION DE EJEMPLO SIGUE Y ES MEJOR SEGUIRLA POR EL PDF
+
+MI VERSION DEL LOGS ROTATE ES MAS CORTA:
+
+7. Rotar logs por intervalo temporal: cada 24horas
+Paso 1: Configurar logrotate para Apache
+sudo nano /etc/logrotate.d/apache2
+
+resulta que tengo configurada por default la rotación de logs diaria, daily
+
+puedo comprobar como funciona esto con el comando:
+sudo logrotate -d /etc/logrotate.d/apache2
+
+funciona correctamente

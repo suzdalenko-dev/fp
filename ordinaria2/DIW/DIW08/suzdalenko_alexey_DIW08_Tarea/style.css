@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Consolas, 'san-serif';
+    background-color: #111;
+    color: white
+}
+
+header, nav, section {
+    width: 78%;
+    margin-left: 11%;
+    margin-top: 33px;
+}
+
+h1 {
+    margin: 22px 0;
+}
+
+header_image {
+    width: 100%;
+}
+.menu_div{
+    display: flex;
+    justify-content: space-between;
+
+}
+.menu_a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: grey;
+    padding: 11px 22px;
+    border-radius: 4px;
+    transition: background-color 1s, color 1s, transform 1s;
+}
+.menu_a:hover {
+    background-color: #333;
+    color:rgb(191, 191, 253);
+    transform: scale(1.3);
+}
+dialog{
+    margin: 33px;
+    background-color: #111;
+}
+.dialog_div{
+    padding-top: 11px;
+    padding-bottom: 11px;
+    width: 60%;
+    margin-left: 20%;
+    text-align: center;
+    color: white
+}
+input:hover, .menu_a:hover{
+    cursor: pointer;
+}
+input{
+    transition: 1s;
+}
+input[type="button"]:hover {
+    background: grey;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+    border: none;
+    padding: 2px;
+    color: white;
+    border-radius: 2px;
+}
+.changing{
+    margin-bottom: 22px;
+    animation: suzdalAnime 5s linear infinite;
+}
+@keyframes suzdalAnime {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100%{trasform: scale(1); }
+}
+.change_color{
+    animation: suzdalText 3s linear infinite;
+}
+@keyframes suzdalText {
+    0% { color: grey; font-size: 17px; }
+    50% {color: white;  font-size: 19px; }
+    100% {color: grey;  font-size: 17px; }
+}

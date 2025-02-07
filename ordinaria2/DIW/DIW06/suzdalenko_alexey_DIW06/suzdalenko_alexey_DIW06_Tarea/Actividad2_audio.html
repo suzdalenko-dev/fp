@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2</title>
+</head>
+
+<body>
+    <h1>Actividad 2</h1>
+
+    <!-- Botón para reproducir música de fondo -->
+    <button id="play-button">Música de Fondo</button>
+
+    <!-- Botón para parar la música de fondo -->
+    <button id="stop-button">Parar</button>
+
+    <!-- Elemento de audio para la música de fondo -->
+    <audio id="background-audio" src="1.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Canvas para el visualizador de audio -->
+    <canvas id="visualizer" width="800" height="200"></canvas>
+    <script>
+        let backgroundAudio, audioContext, analyser, dataArray, canvas, canvasContext;
+
+        /* referencia al elemento <audio> que contiene el archivo de audio */
+        backgroundAudio = document.getElementById("background-audio");
+        canvas = document.getElementById("visualizer");
+        canvasContext = canvas.getContext("2d");
+
+        const playButton = document.getElementById("play-button");
+        const stopButton = document.getElementById("stop-button");
+
+        let isVisualizerInitialized = false;
+
+        // Event listeners for play and stop buttons
+        playButton.addEventListener("click", () => {
+            play();
+        });
+
+        function play() {
+            backgroundAudio.loop = true;
+            backgroundAudio.play();
+
+            if (!isVisualizerInitialized) {
+                initializeVisualizer();
+                drawVisualizer();
+                isVisualizerInitialized = true;
+            }
+        }
+
+        function pause(){
+            backgroundAudio.pause();
+            backgroundAudio.currentTime = 0; // Reinicia el audio al inicio
+        }
+
+        stopButton.addEventListener("click", () => {
+            pause();
+        });
+
+        function initializeVisualizer() {
+            /* representa el contexto de audio. 
+                Es una instancia de AudioContext, una API de Web Audio que permite trabajar con audio en tiempo real, 
+                incluyendo análisis, reproducción y modificación. */
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            let source = audioContext.createMediaElementSource(backgroundAudio);
+            /* es un nodo de análisis del contexto de audio. 
+                Permite acceder a datos sobre la frecuencia y el tiempo del audio que pasa por él
+                crea un nodo de análisis. Este nodo extrae datos del audio que pasa por él.
+            */
+            analyser = audioContext.createAnalyser();
+            source.connect(analyser);
+            analyser.connect(audioContext.destination);
+            analyser.fftSize = 256;
+            let bufferLength = analyser.frequencyBinCount;
+            /*  un arreglo donde se almacenan las amplitudes de las frecuencias analizadas por el analyser. */
+            dataArray = new Uint8Array(bufferLength);
+        }
+
+        function drawVisualizer() {
+            requestAnimationFrame(drawVisualizer);
+
+            analyser.getByteFrequencyData(dataArray);
+
+            canvasContext.fillStyle = "rgba(0, 0, 0, 0.2)";
+            canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+
+            const barWidth = (canvas.width / dataArray.length) * 1.3;
+            let barHeight;
+            let x = 0;
+
+            for (let i = 0; i < dataArray.length; i++) {
+                barHeight = dataArray[i];
+                // Determinar el color según la posición de la barra
+                if (i < dataArray.length / 4) {
+                    // Primera tercera parte: rojo
+                    canvasContext.fillStyle = "rgb(" + (barHeight + 100) + ",50,50)";
+                } else if (i < (2 * dataArray.length) / 4) {
+                    // Segunda tercera parte: verde
+                    canvasContext.fillStyle = "rgb(50," + (barHeight + 100) + ",50)";
+                } else {
+                    // Última tercera parte: azul
+                    canvasContext.fillStyle = "rgb(50,50," + (barHeight + 100) + ")";
+                }
+                canvasContext.fillRect(x, canvas.height - barHeight / 2, barWidth, barHeight / 2);
+                x += barWidth + 1;
+            }
+        }
+    </script>
+    <style>
+        * {
+            font-family: Consolas, "san-serif";
+        }
+        audio {
+            display: none;
+        }
+        canvas {
+            display: block;
+            border: 1px solid black;
+            display: block;
+            width: 100%;
+            margin: 20px auto;
+        }
+    </style>
+</body>
+</html>

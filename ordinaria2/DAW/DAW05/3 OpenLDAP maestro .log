@@ -1,0 +1,62 @@
+===========================================================================================
+A ver ahora instalo OpenLDAP en el servidor maestro, donde estoy trabajando
+===========================================================================================
+sudo apt update
+sudo apt install slapd ldap-utils -y
+su - root # carga el entorno de root para evitar problemas con el comando dpkg-reconfigure
+
+sudo dpkg-reconfigure slapd
+
+Omitir base de datos inicial: ❌ NO
+Nombre de dominio: empresa-tarea-daw05.local
+Nombre de la organización: atencion_cliente
+Contraseña de administrador: Usa la que definiste antes
+Tipo de base de datos: MDB
+Eliminar base de datos al purgar slapd: ❌ SI
+Permitir acceso anónimo: ❌ SI
+
+systemctl status slapd
+ldapsearch -x -LLL -H ldap:/// -b dc=empresa-tarea-daw05,dc=local  # Verificar que el dominio esta configurado
+
+
+nano estructura.ldif
+
+dn: ou=operador,dc=empresa-tarea-daw05,dc=local
+objectClass: organizationalUnit
+ou: operador
+
+ldapadd -x -D "cn=admin,dc=empresa-tarea-daw05,dc=local" -W -f estructura.ldif
+ldapsearch -x -LLL -b dc=empresa-tarea-daw05,dc=local ou=operador # Verificar que la estructura se ha creado
+
+
+nano usuario.ldif
+
+
+dn: uid=op1,ou=operador,dc=empresa-tarea-daw05,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+cn: op1
+sn: Operador
+uid: op1
+uidNumber: 1771
+gidNumber: 1771
+homeDirectory: /home/op1
+loginShell: /bin/bash
+userPassword: {SSHA}xB4vFhD+O6Lm27P2XYt7dy3G8vFA9nF7
+
+
+slappasswd
+{SSHA}xB4vFhD+O6Lm27P2XYt7dy3G8vFA9nF7
+
+
+ldapadd -x -D "cn=admin,dc=empresa-tarea-daw05,dc=local" -W -f usuario_op1.ldif
+
+
+# Verificar la Estructura DIT en el servidor maestro, donde estoy trabajando
+ldapsearch -x -LLL -D "cn=admin,dc=empresa-tarea-daw05,dc=local" -W -b "dc=empresa-tarea-daw05,dc=local"
+
+
+# Probar el acceso con el usuario op1
+ldapwhoami -x -D "uid=op1,ou=operador,dc=empresa-tarea-daw05,dc=local" -w oper
+

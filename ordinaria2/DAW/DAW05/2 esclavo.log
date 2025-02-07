@@ -1,0 +1,78 @@
+Configura la dirección IP estática:
+nano /etc/netplan/00-installer-config.yaml
+nano /etc/network/interfaces
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# Configuración del Adaptador 1 (NAT) para acceso a internet
+auto enp0s3
+iface enp0s3 inet dhcp
+
+# Configuración del Adaptador 2 (Red Interna) 
+auto enp0s8
+iface enp0s8 inet static
+    address 192.168.200.249
+    netmask 255.255.255.0
+    gateway 192.168.200.1
+    dns-nameservers 192.168.200.250
+
+
+sudo systemctl restart networking
+
+ping 192.168.200.250
+
+
+Paso 1: Configurar el servidor esclavo BIND
+apt update
+apt install bind9 bind9utils bind9-doc
+
+nano /etc/bind/named.conf.local
+
+zone "empresa-tarea-daw05.local" {
+    type slave;
+    masters { 192.168.200.250; }; # Dirección IP del servidor maestro
+    file "/var/cache/bind/db.empresa-tarea-daw05.local";
+};
+
+nano /etc/resolv.conf
+  nameserver 192.168.200.250
+  chattr +i /etc/resolv.conf   # Bloquea el archivo para que no se pueda modificar
+
+systemctl restart bind9
+systemctl status bind9
+
+
+Comprueba que el archivo de zona se haya creado en el esclavo:
+ls /var/cache/bind/
+
+
+5. Probar la resolución DNS en el esclavo
+    nslookup ns1.empresa-tarea-daw05.local 127.0.0.1
+    nslookup mail.empresa-tarea-daw05.local 127.0.0.1
+    nslookup aplicacion-web.empresa-tarea-daw05.local 127.0.0.1
+
+por el video de youtube
+    nano nsswitch.conf # en hosts poner dns
+        passwd: files ldap
+        group: files ldap
+        shadow: files ldap
+
+        hosts: files dns
+
+
+
+
+
+
+======== Revisar toda la estructura DIT del dominio empresa-tarea-daw05.local a través del servidor DNS esclavo ========
+apt update
+apt install ldap-utils -y
+
+# prueba de conexión basica
+# ldapsearch -x -LLL -H ldap://192.168.200.250 -s base
+
+# revisar toda la estructura DIT del dominio empresa-tarea-daw05.local a través del servidor DNS esclavo
+ldapsearch -x -LLL -H ldap://192.168.200.250 -D "cn=admin,dc=empresa-tarea-daw05,dc=local" -w admin -b "dc=empresa-tarea-daw05,dc=local"
+

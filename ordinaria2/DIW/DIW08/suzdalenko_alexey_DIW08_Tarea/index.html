@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- punto 1 de la tarea -->
+    <header>
+        <h1>¿Por qué ‘Peaky Blinders’ es actualmente la mejor serie?</h1>
+        <img src="1.jpg" alt="Peaky Blinders" class="header_image">
+        <p>Sin hacer mucho ruido, Tommy Shelby se ha convertido en el Tony Soprano para una nueva generación. Así es la
+            ficción que acaba de estrenar su nueva temporada</p>
+        <p>No hay serie en la actualidad donde se fume más. No hay serie hoy donde se vista tan bien. Pocas ficciones
+            con un protagonista tan carismático: Tommy Shelby, interpretado por el actor irlandés Cillian Murphy (Cork,
+            Irlanda, 1976).</p>
+    </header>
+    <!-- punto 2 de la tarea -->
+    <nav>
+        <details open>
+            <summary>Menu</summary>
+            <br>
+            <div class="menu_div">
+                <a class="menu_a" href="#trama">Trama</a>
+                <a class="menu_a" href="#personajes">Personajes</a>
+                <a class="menu_a" href="#temporadas">Temporadas</a>
+            </div>
+        </details>
+    </nav>
+    <section id="trama">
+        <h3>Trama</h3>
+        <p>Peaky Blinders es una serie de drama criminal ambientada en la Inglaterra de la posguerra tras la Primera Guerra Mundial. La historia sigue a Tommy Shelby, el carismático y ambicioso líder de la familia Shelby, que dirige una peligrosa organización criminal en Birmingham. A medida que expande su imperio, Tommy enfrenta amenazas de rivales, la policía y su propia ambición desmedida, mientras lucha con los traumas de la guerra y el peso del poder.</p>
+    </section>
+    <section id="personajes">
+        <h3>Personajes</h3>
+        <p>Thomas "Tommy" Shelby – Líder astuto y ambicioso de los Peaky Blinders. Un exsoldado con un gran sentido estratégico que busca expandir su imperio criminal mientras enfrenta sus propios demonios internos.</p><br>
+        <p>Arthur Shelby – Hermano mayor de Tommy y su mano derecha. Es impulsivo, violento y lucha con su temperamento incontrolable, aunque profundamente leal a su familia.</p><br>
+        <p>Polly Gray – Tía de los Shelby y la matriarca de la familia. Inteligente, calculadora y con una gran experiencia en los negocios de los Peaky Blinders, Polly es una de las figuras más influyentes de la organización.</p><br>
+        <p>John Shelby – Hermano menor de Tommy y Arthur. Aunque es un hombre de familia, también es un miembro clave en la banda, conocido por su ferocidad y valentía en las peleas.</p><br>
+        <p>Ada Shelby – Única hermana de la familia Shelby. Es independiente y lucha por alejarse del mundo criminal de su familia, aunque el destino la mantiene vinculada a los Peaky Blinders.</p><br>
+        <p>Alfie Solomons – Líder de la mafia judía en Londres. Es un hombre impredecible, con una mezcla de inteligencia, brutalidad y humor sarcástico, que lo convierte en un aliado y enemigo formidable para Tommy.</p><br>
+        <p>Michael Gray – Hijo de Polly Gray, inicialmente ajeno a la vida criminal pero que con el tiempo se convierte en una figura clave dentro del negocio de los Shelby.</p><br>
+        <p>Grace Burgess – Una exagente encubierta que se infiltra en los Peaky Blinders, pero termina enamorándose de Tommy, desatando una historia de amor trágica y compleja.</p><br>
+        <p>Luca Changretta – Un despiadado líder de la mafia italiana que busca venganza contra los Shelby, desatando una de las rivalidades más intensas de la serie.</p><br>
+        <p>Inspector Chester Campbell – Un policía irlandés implacable enviado por Winston Churchill para acabar con los Peaky Blinders, convirtiéndose en el principal antagonista en las primeras temporadas.</p><br>
+    </section>
+    <section id="temporadas">
+        <h3>Temporadas</h3>
+        <p>La serie Peaky Blinders cuenta con un total de 6 temporadas, emitidas entre 2013 y 2022.</p>
+    </section>
+    <!-- punto 3 de la tarea -->
+    <script>
+        function inputOpen(x){ document.getElementById('dialog'+x).setAttribute('open', 'open'); }
+        function closeOpen(x){ document.getElementById('dialog'+x).removeAttribute('open'); }
+    </script>
+    <section>
+        <input type="button" value="Abrir escenas icónicas" onclick="inputOpen(0)">
+        <input type="button" value="Abrir personajes" onclick="inputOpen(1)">
+        <input type="button" value="Abrir autor de la tarea" onclick="inputOpen(2)">
+    </section>
+    <section>
+        <dialog id="dialog0">
+            <div class="dialog_div">
+                <img src="2.jpg" alt="Abrir escenas icónica" width="300px" class="changing">
+                <p class="change_color">Una de las escenas más icónicas de "Peaky Blinders" ocurre en el episodio final de la primera temporada, donde Tommy Shelby se enfrenta cara a cara con Billy Kimber. En esta tensa confrontación, ambos líderes de bandas rivales se encuentran en una negociación que rápidamente se convierte en un tiroteo decisivo. Esta escena no solo destaca por su intensidad dramática, sino también por la representación del poder y la astucia de Tommy Shelby al consolidar su dominio en Birmingham.</p>
+                <input type="button" value="Cerrar" onclick="closeOpen(0)">
+            </div>
+        </dialog>
+        <dialog id="dialog1">
+            <div class="dialog_div">
+                <img src="3.jpg" alt="Abrir escenas icónica" width="300px" class="changing">
+                <p class="change_color">Thomas "Tommy" Shelby
+                    Líder del clan Shelby, ambicioso y estratega. Excombatiente de la Primera Guerra Mundial.
+                    
+                    Arthur Shelby
+                    Hermano mayor de Tommy, impulsivo y violento, pero leal a su familia.
+                    
+                    Polly Gray
+                    Tía de los Shelby y la figura materna del clan. Inteligente y experta en negocios.
+                    
+                    John Shelby
+                    Hermano menor de Tommy y Arthur. Valiente y protector, aunque a menudo toma decisiones impulsivas etc..</p>
+                <input type="button" value="Cerrar" onclick="closeOpen(1)">
+            </div>
+        </dialog>
+        <dialog id="dialog2">
+            <div class="dialog_div">
+                <img src="https://suzdalenko-dev.web.app/assets/img/x.jpg" alt="Abrir escenas icónica" width="300px" class="changing">
+                <p class="change_color">Alexey Suzdalenko estudiando DAW08.. Alexey Suzdalenko estudiando DAW08.. Alexey Suzdalenko estudiando DAW08.. </p>
+                <input type="button" value="Cerrar" onclick="closeOpen(2)">
+            </div>
+        </dialog>
+    </section>
+</body>
+</html>
