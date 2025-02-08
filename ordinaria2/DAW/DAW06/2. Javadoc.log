@@ -1,0 +1,60 @@
+2. Plantillas de código en Javadoc
+Las plantillas de código en Javadoc consisten en comentarios estructurados utilizados 
+    para documentar el código fuente de programas Java.
+
+Componentes principales de las plantillas Javadoc
+Encabezado de la clase o método: Este comentario va justo antes de la declaración de una clase, método o atributo.
+
+/**
+ * Breve descripción de la clase o método.
+ * @author Nombre del autor
+ * @version Número de versión
+ * @param Nombre y descripción de los parámetros (para métodos)
+ * @return Descripción del valor devuelto (para métodos)
+ * @throws Nombre de la excepción y descripción
+ */
+
+    Etiquetas comunes:
+        @author: Indica quién escribió el código.
+        @version: Especifica la versión del código.
+        @param: Documenta los parámetros de un método.
+        @return: Describe el valor que devuelve un método.
+        @throws: Explica las excepciones que puede lanzar un método.
+        Ejemplo en Java:
+
+/**
+ * Clase para representar una calculadora.
+ * @author Juan Pérez
+ * @version 1.0
+ */
+public class Calculadora {
+    /**
+     * Suma dos números.
+     * @param a Primer número
+     * @param b Segundo número
+     * @return La suma de los dos números
+     */
+    public int suma(int a, int b) {
+        return a + b;
+    }
+}
+
+
+----------------------------------------------------------
+INSTALACION DE Javadoc
+
+Para realizar la instalación de Eclipse únicamente ejecutamos desde un terminal:
+    apt install default-jre
+    apt install -y snapd
+    snap install --classic eclipse
+
+Instalación de NetBeans
+    apt install default-jdk
+    sudo apt -y install wget unzip
+    wget https://www-us.apache.org/dist/incubator/netbeans/incubating-netbeans/incubating-11.0/incubating-netbeans-11.0-bin.zip 
+    unzip incubating-netbeans-11.0-bin.zip
+    mv netbeans/ /opt/
+    export PATH="$PATH:/opt/netbeans/bin/"
+    source ~/.bashrc
+
+Desde neatbeans o eclipse se puede hacer el javaDoc

@@ -1,0 +1,25 @@
+Resumen de comandos INSTALACION GIT git-1.7.6.tar.bz2
+
+apt update && apt install -y libcurl4-openssl-dev zlib1g-dev libssl-dev libexpat1-dev gettext
+
+# Descargar el archivo
+wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-1.7.6.tar.bz2
+
+# Moverlo al directorio de compilación
+mv git-1.7.6.tar.bz2 /usr/local/src/
+cd /usr/local/src/
+
+# Extraer el contenido
+tar -xvjf git-1.7.6.tar.bz2
+cd git-1.7.6
+
+# Configurar el entorno
+make configure
+./configure --prefix=/usr/local
+
+# Compilar e instalar
+make all
+make install
+
+# Verificar la instalación
+git --version

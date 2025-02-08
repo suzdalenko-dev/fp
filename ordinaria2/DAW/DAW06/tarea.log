@@ -14,6 +14,16 @@
 
     3.1 Suponiendo que el sistema ya tiene instalado las siguientes librerías de las que Git depende: curl, zlib, openssl, expat, y libiconv, 
         pasos a realizar la compilación e instalación de Git considerando que ya disponemos del paquete git-1.7.6.tar.bz2
+            apt update && apt install -y libcurl4-openssl-dev zlib1g-dev libssl-dev libexpat1-dev gettext
+            cd /usr/local/src/
+            wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-1.7.6.tar.bz2
+            tar -xvjf git-1.7.6.tar.bz2
+            cd git-1.7.6
+            make configure
+            ./configure --prefix=/usr/local     # Ejecuta el script de configuración para preparar la compilación. Este paso asegura que Git se instalará en /usr/local:
+            make all                            # Compilar el código fuente, una vez configurado, compila el código ejecutando
+            make install                        # Instalo git
+            git --version                       # Verifico la instalacion
 
     3.2 Cómo obtener Git a través del propio Git para futuras actualizaciones, 
         de manera que descargaría automáticamente el código fuente desde su repositorio.
