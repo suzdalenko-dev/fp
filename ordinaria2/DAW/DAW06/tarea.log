@@ -19,17 +19,36 @@
             wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-1.7.6.tar.bz2
             tar -xvjf git-1.7.6.tar.bz2
             cd git-1.7.6
-            make configure
-            ./configure --prefix=/usr/local     # Ejecuta el script de configuración para preparar la compilación. Este paso asegura que Git se instalará en /usr/local:
-            make all                            # Compilar el código fuente, una vez configurado, compila el código ejecutando
-            make install                        # Instalo git
-            git --version                       # Verifico la instalacion
+            make prefix=/usr/local all     # Ejecuta el script de configuración para preparar la compilación. Este paso asegura que Git se instalará en /usr/local: 
+                                           # Compilar el código fuente, una vez configurado, compila el código ejecutando
+            make prefix=/usr/local install # Instalo git
+            git --version                  # Verifico la instalacion
 
     3.2 Cómo obtener Git a través del propio Git para futuras actualizaciones, 
         de manera que descargaría automáticamente el código fuente desde su repositorio.
+            git clone https://github.com/git/git.git
+            cd git
+            git pull
+
 
     3.3 Comprobar la versión que se ha instalado de Git.
+        git --version
+        git version 1.7.6
+
+
     3.4 Establecer el nombre de usuario y dirección de correo electrónico en la configuración de Git.
+        git config --global user.name "suzdalenko"
+        git config --global user.email "suzdalenko.suzdalenko@gmail.com"
+        git config --list
+
     3.5 Cambiar el editor de texto que trae por defecto Git al editor emacs.
+        git config --global core.editor "emacs"
+        git config --get core.editor
+
+
     3.6 Dentro de la carpeta /var/cache/git/ crear una carpeta para un nuevo proyecto denominado tarea_DAW06 
         e iniciar un repositorio el nuevo proyecto.
+            mkdir -p /var/cache/git/tarea_DAW06
+            cd /var/cache/git/tarea_DAW06
+            ls -la .git                            # verificar si el repositorio se creo correctamente
+
