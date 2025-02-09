@@ -50,5 +50,18 @@
         e iniciar un repositorio el nuevo proyecto.
             mkdir -p /var/cache/git/tarea_DAW06
             cd /var/cache/git/tarea_DAW06
+            git init
+            git add .
+            git commit -m "first commit"
+            git branch -M main
+            git remote add origin https://github.com/suzdalenko-dev/tarea_DAW06.git
+            git push -u origin main
+            
+            ghp_ cNUtkJ44pGRR58ZUkWPCL1qxbUEZfp4S1XHn
+            git remote set-url origin https://<username>@github.com/suzdalenko-dev/tarea_DAW06.git
+            git push --set-upstream origin main
+            git remote set-url origin https://ghp_ cNUtkJ44pGRR58ZUkWPCL1qxbUEZfp4S1XHn@github.com/suzdalenko-dev/tarea_DAW06.git
+
+            
             ls -la .git                            # verificar si el repositorio se creo correctamente
 

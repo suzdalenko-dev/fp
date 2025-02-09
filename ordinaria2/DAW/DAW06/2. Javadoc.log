@@ -3,7 +3,8 @@ Las plantillas de código en Javadoc consisten en comentarios estructurados util
     para documentar el código fuente de programas Java.
 
 Componentes principales de las plantillas Javadoc
-Encabezado de la clase o método: Este comentario va justo antes de la declaración de una clase, método o atributo.
+Encabezado de la clase o método: Este comentario va justo antes de la declaración de una clase,
+ método o atributo.
 
 /**
  * Breve descripción de la clase o método.
