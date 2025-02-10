@@ -1,4 +1,6 @@
-composer create-project laravel/laravel example-app
+composer self-update
+composer create-project laravel/laravel suzdalenko-alexey
+
 php artisan migrate
 php artisan serve
 php artisan migrate:rollback
