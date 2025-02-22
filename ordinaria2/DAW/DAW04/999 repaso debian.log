@@ -122,7 +122,7 @@
                 chmod 777 /home/ftpusers/direccion
 
                 nano /etc/proftpd/proftpd.conf
-                    Include /etc/proftpd/conf.d/*        (ultima linea)
+                    Include /etc/proftpd/conf.d/*.conf        (ultima linea)
                 nano /etc/proftpd/conf.d/virtual.conf
 
                     <VirtualHost 192.168.83.222>
