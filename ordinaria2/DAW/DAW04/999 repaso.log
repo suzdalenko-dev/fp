@@ -1,0 +1,66 @@
+1. instalo proftpd (servidor ftp):
+    apt install proftpd -y
+    apt install ftp -y
+
+    systemctl status proftpd
+    systemctl enable proftpd
+    systemctl start proftpd
+
+
+
+2. usar un usuario anonimo: miro el archivo 0.5
+    cd /etc/proftpd/
+    nano proftpd.conf
+    # descomento todo lo relacionado con el usuario anonimo
+    # <Anonymous ftp>
+    #     User
+    #     Group
+    #     UserAlias
+    #     Dir...
+    #     Dir...
+    #     Require..
+    #     MaxCli..
+    #     DisplayLo
+    #     DisplayCh
+    #     <Directory *>
+    #         <Limit Write>
+    #             DenyAll   <--- para que SI pueda escribi AllowAll
+    #         </Limit>
+    #     </Directory>
+    # </Anonymous>
+    systemctl restart proftpd
+
+    conectarse con el usuario anonimo: en este caso me conecto en la misma maquina en url /var/ftp o /srv/ftp
+        ftp 10.0.2.15
+        Username: ftp
+        Password: ""
+
+        Para traer archivos del servidor a tu máquina local, usa:
+            get archivo.txt 
+
+        Para enviar archivos desde tu máquina local al servidor:
+            put archivo.txt
+
+        Para listar los archivos en el servidor:
+            ls
+
+        Para cambiar de directorio en el servidor:
+            ftp> cd /var/www/html
+
+        Si quieres cambiar el directorio de tu PC mientras usas FTP:
+            ftp> lcd /home/usuario/Documentos
+
+        Para listar los archivos en tu PC:
+            ftp> !ls
+
+
+
+3. Configurar el servidor ProFTPD con:
+    1. El usuario virtual: direccion con permisos de escritura:
+    
+        Configuramos el usuario virtual “direccion”, para ello lo primero modificamos el archivo
+            nano /etc/proftpd/proftpd.conf
+                Include /etc/proftpd/modules.conf       
+                 DefaultRoot ~
+                 RequireValidShell off
+                 AuthUserFile /etc/proftpd/ftpd.passwd

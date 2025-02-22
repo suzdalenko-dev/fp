@@ -2,7 +2,7 @@ Step 1: Install ProFTPD
   apt install proftpd -y
   
 
-Step 2: Configure ProFTPD for Virtual User
+Step 2: Configure ProFTPD for Virtual User 
   cd /etc/proftpd
   nano /etc/proftpd/proftpd.conf
     Include /etc/proftpd/modules.conf       # this line alredy exist
