@@ -116,7 +116,11 @@
                               - 8.8.4.4
 
 
-            configuramos domen "suzdalenko.local" ó la IP 
+            configuramos domen "suzdalenko.local" ó la IP
+                mkdir -p /home/ftpusers/direccion
+                chown ftp:nogroup /home/ftpusers/direccion
+                chmod 777 /home/ftpusers/direccion
+
                 nano /etc/proftpd/proftpd.conf
                     Include /etc/proftpd/conf.d/*        (ultima linea)
                 nano /etc/proftpd/conf.d/virtual.conf
