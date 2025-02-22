@@ -65,11 +65,45 @@
                  RequireValidShell off
                  AuthUserFile /etc/proftpd/ftpd.passwd
 
-        Creamos el directorio para el usuario virtual "direccion": "apt update && apt install proftpd-mod-auth-file -y"
+        Creamos el directorio para el usuario virtual "direccion": "apt update && apt install proftpd-mod-auth-file -y" and "apt install proftpd-utils -y" y me pedira la contraseña
             mkdir -p /var/ftp/direccion
             chown ftp.nogroup /var/ftp/direccion  
             chmod 777 /var/ftp/direccion
             touch /etc/proftpd/ftpd.passwd
-            chmod 600 /etc/proftpd/ftpd.passwd
+            chmod 644 /etc/proftpd/ftpd.passwd
             ftpasswd --passwd --name=direccion --uid=3001 --gid=3001 --home=/var/ftp/direccion --shell=/bin/false --file=/etc/proftpd/ftpd.passwd
             ftpasswd --passwd --name=direccion --unlock
+            cat /etc/proftpd/ftpd.passwd
+            systemctl restart proftpd
+
+
+    2. Configuracion del host "suzdalenko.local" ó la IP "192.168.100.222": 
+            para debian:
+                nano /etc/network/interfaces
+                    auto eth0
+                    iface eth0 inet static
+                        address 192.168.250.250
+                        netmask 255.255.255.0
+                        gateway 192.168.250.39
+                        dns-nameservers 8.8.8.8 8.8.4.4
+
+                    iface eth0:1 inet static
+                        address 192.168.100.222
+                        netmask 255.255.255.0
+
+
+            para ubuntu:
+                nano /etc/netplan/01-netcfg.yaml OR OTHER FILE !!!
+                    network:
+                      version: 2
+                      renderer: networkd
+                      ethernets:
+                        enp0s3:
+                          addresses:
+                            - 192.168.250.250/24
+                            - 192.168.100.222/24   # Añade esta línea para la segunda IP
+                          gateway4: 192.168.250.39 # puerta de enlace de mi equipo anfitrión, y el la red NAT => Adaptador puente !!!!
+                          nameservers:
+                            addresses:
+                              - 8.8.8.8
+                              - 8.8.4.4
