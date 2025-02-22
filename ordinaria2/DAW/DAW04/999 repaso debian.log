@@ -152,4 +152,4 @@
     mis cosas:
         apt install lftp -y
         lftp -u direccion,direccion ftps://suzdalenko.local
-        lftp -u direccion,direccion -e "set ftp:ssl-force true" ftps://suzdalenko.local
+        lftp -u direccion,direccion -e "set ftp:ssl-force true" ftps://suzdalenko.local !!! no funciona
