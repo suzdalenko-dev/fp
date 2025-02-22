@@ -102,18 +102,21 @@
             para ubuntu:
                 nano /etc/netplan/01-netcfg.yaml OR OTHER FILE !!!
                     network:
-                      version: 2
-                      renderer: networkd
-                      ethernets:
-                        enp0s3:
-                          addresses:
-                            - 192.168.250.250/24
-                            - 192.168.100.222/24   # Añade esta línea para la segunda IP
-                          gateway4: 192.168.250.39 # puerta de enlace de mi equipo anfitrión, y el la red NAT => Adaptador puente !!!!
-                          nameservers:
-                            addresses:
-                              - 8.8.8.8
-                              - 8.8.4.4
+                     version: 2
+                     renderer: networkd
+                     ethernets:
+                       enp0s3:
+                         dhcp4: true  # Configuración DHCP para el adaptador 1 (NAT)
+                       enp0s8:
+                         dhcp4: false
+                         addresses:
+                           - 192.168.83.222/24  # Dirección IP estática
+                         gateway4: 192.168.83.74  # Puerta de enlace para la red interna
+                         nameservers:
+                           addresses:
+                             - 8.8.8.8
+                             - 8.8.4.4
+
 
 
             configuramos domen "suzdalenko.local" ó la IP
