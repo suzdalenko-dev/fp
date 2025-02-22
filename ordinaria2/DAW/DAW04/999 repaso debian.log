@@ -140,3 +140,16 @@
                   systemctl restart proftpd
                   systemctl status proftpd
                   passive on
+
+
+
+4. Tsl en el archivo Tsl
+
+5 apt install filezilla -y
+    sudo apt install filezilla -y
+    filezilla  (desde usuario no root)
+
+    mis cosas:
+        apt install lftp -y
+        lftp -u direccion,direccion ftps://suzdalenko.local
+        lftp -u direccion,direccion -e "set ftp:ssl-force true" ftps://suzdalenko.local
