@@ -114,3 +114,24 @@
                             addresses:
                               - 8.8.8.8
                               - 8.8.4.4
+
+
+            configuramos domen "suzdalenko.local" ó la IP 
+                nano /etc/proftpd/proftpd.conf
+                    Include /etc/proftpd/conf.d/*        (ultima linea)
+                nano /etc/proftpd/conf.d/virtual.conf
+
+                    <VirtualHost 192.168.83.222>
+                      ServerName "suzdalenko.local"
+                      DefaultRoot /home/ftpusers/direccion
+                      RequireValidShell off
+                      AuthUserFile /etc/proftpd/ftpd.passwd
+                    </VirtualHost>
+
+                Update DNS or /etc/hosts
+                  nano /etc/hosts
+                  192.168.83.222 suzdalenko.local
+
+                Restart ProFTPD
+                  systemctl restart proftpd
+                  systemctl status proftpd
