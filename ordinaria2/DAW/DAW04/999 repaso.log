@@ -65,8 +65,8 @@
                  RequireValidShell off
                  AuthUserFile /etc/proftpd/ftpd.passwd
 
-        Creamos el directorio para el usuario virtual "direccion":
-            mkdir /var/ftp/direccion
+        Creamos el directorio para el usuario virtual "direccion": "apt update && apt install proftpd-mod-auth-file -y"
+            mkdir -p /var/ftp/direccion
             chown ftp.nogroup /var/ftp/direccion  
             chmod 777 /var/ftp/direccion
             touch /etc/proftpd/ftpd.passwd
