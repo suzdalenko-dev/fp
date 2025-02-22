@@ -117,9 +117,9 @@
 
 
             configuramos domen "suzdalenko.local" ó la IP
-                mkdir -p /home/ftpusers/direccion
-                chown ftp:nogroup /home/ftpusers/direccion
-                chmod 777 /home/ftpusers/direccion
+                mkdir -p /home/ftpusers/direccion                   !!! esta direccion pongo en defaul root si es que hace falta
+                chown ftp:nogroup /home/ftpusers/direccion                  !!! esta direccion pongo en defaul root si es que hace falta
+                chmod 777 /home/ftpusers/direccion                  !!! esta direccion pongo en defaul root si es que hace falta
 
                 nano /etc/proftpd/proftpd.conf
                     Include /etc/proftpd/conf.d/*.conf        (ultima linea)
@@ -127,7 +127,7 @@
 
                     <VirtualHost 192.168.83.222>
                       ServerName "suzdalenko.local"
-                      DefaultRoot /home/ftpusers/direccion
+                      DefaultRoot /var/ftp/direccion
                       RequireValidShell off
                       AuthUserFile /etc/proftpd/ftpd.passwd
                     </VirtualHost>
@@ -139,3 +139,4 @@
                 Restart ProFTPD
                   systemctl restart proftpd
                   systemctl status proftpd
+                  passive on
