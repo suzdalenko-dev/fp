@@ -57,10 +57,19 @@
 
 3. Configurar el servidor ProFTPD con:
     1. El usuario virtual: direccion con permisos de escritura:
-    
-        Configuramos el usuario virtual “direccion”, para ello lo primero modificamos el archivo
+
+        Configuramos el usuario virtual “direccion”, para ello lo primero modificamos el archivo, añadimos estos datos:
             nano /etc/proftpd/proftpd.conf
                 Include /etc/proftpd/modules.conf       
                  DefaultRoot ~
                  RequireValidShell off
                  AuthUserFile /etc/proftpd/ftpd.passwd
+
+        Creamos el directorio para el usuario virtual "direccion":
+            mkdir /var/ftp/direccion
+            chown ftp.nogroup /var/ftp/direccion  
+            chmod 777 /var/ftp/direccion
+            touch /etc/proftpd/ftpd.passwd
+            chmod 600 /etc/proftpd/ftpd.passwd
+            ftpasswd --passwd --name=direccion --uid=3001 --gid=3001 --home=/var/ftp/direccion --shell=/bin/false --file=/etc/proftpd/ftpd.passwd
+            ftpasswd --passwd --name=direccion --unlock
