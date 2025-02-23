@@ -61,9 +61,9 @@
         Configuramos el usuario virtual “direccion”, para ello lo primero modificamos el archivo, añadimos estos datos:
             nano /etc/proftpd/proftpd.conf
                 Include /etc/proftpd/modules.conf       
-                 DefaultRoot ~
-                 RequireValidShell off
-                 AuthUserFile /etc/proftpd/ftpd.passwd
+                DefaultRoot ~
+                RequireValidShell off
+                AuthUserFile /etc/proftpd/ftpd.passwd
 
         Creamos el directorio para el usuario virtual "direccion": "apt update && apt install proftpd-mod-auth-file -y" and "apt install proftpd-utils -y" y me pedira la contraseña
             mkdir -p /var/ftp/direccion
