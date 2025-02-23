@@ -119,6 +119,7 @@
 
                 netplan apply
 
+            # lo cierto que no es necesario hacer todo esto para conectarse a "suzdalenko.local" o 192.168.83.222, con la parte de arriba es suficiente es suficiente
 
             configuramos domen "suzdalenko.local" ó la IP
                 mkdir -p /home/ftpusers/direccion                   !!! esta direccion pongo en defaul root si es que hace falta
