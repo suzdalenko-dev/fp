@@ -13,12 +13,11 @@ iface enp0s3 inet dhcp
 # Configuración del Adaptador 2 (Red Interna) 
 auto enp0s8
 iface enp0s8 inet static
-    address 192.168.200.249
+    address 192.168.1.113
     netmask 255.255.255.0
-    gateway 192.168.200.1
-    dns-nameservers 192.168.200.250
+    dns-nameservers 192.168.1.111
 
 
 sudo systemctl restart networking
 
-ping 192.168.200.250
+ping 192.168.1.111
