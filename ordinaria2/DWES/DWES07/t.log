@@ -6,3 +6,13 @@ php artisan serve
 php artisan migrate:rollback
 php artisan migrate:reset
 php artisan migrate:fresh
+
+php artisan make:model Producto -m
+php artisan make:migration
+php artisan migrate
+php artisan migrate --force
+php artisan migrate:rollback
+
+php artisan make:model Tienda -m
+
+php artisan make:controller ProductoController

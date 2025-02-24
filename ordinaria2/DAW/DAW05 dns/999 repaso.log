@@ -1,0 +1,21 @@
+1. debian mostrar el ip 192.168.1.111
+    Configuracion del host "suzdalenko.local" ó la IP "192.168.1.111": 
+            para debian:
+                nano /etc/network/interfaces
+                    # The loopback network interface
+                    auto lo
+                    iface lo inet loopback
+
+                    # Configuración del Adaptador 1 (NAT) para acceso a internet
+                    auto enp0s3
+                    iface enp0s3 inet dhcp
+
+                    # Configuración del Adaptador 2 (Red Interna)
+                    auto enp0s8
+                    iface enp0s8 inet static
+                        address 192.168.1.111
+                        netmask 255.255.255.0
+                        gateway 192.168.1.1
+                        dns-nameservers 8.8.8.8 8.8.4.4
+
+                systemctl restart networking
