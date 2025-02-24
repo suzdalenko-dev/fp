@@ -32,7 +32,6 @@ ping www.google.com
 
 ping 192.168.200.250
 
-
 Paso 1: Instalar BIND
 sudo apt update
 sudo apt install bind9 bind9utils bind9-doc

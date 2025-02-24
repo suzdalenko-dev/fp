@@ -17,7 +17,7 @@
                         address 192.168.1.111
                         netmask 255.255.255.0
                         gateway 192.168.1.1
-                        dns-nameservers 8.8.8.8 8.8.4.4
+                        dns-nameservers 192.168.1.111
 
                 systemctl restart networking
 
@@ -74,3 +74,27 @@ suzdal IN A 192.168.1.111
 ; CNAME record (alias de otro nombre)
 aplicacion-web IN CNAME www.redmine.suzdalenko.local. ; Alias para redmine aplicacion-web.suzdalenko.local
 openldap IN CNAME www.redmine.suzdalenko.local. ; Alias para redmine openldap.suzdalenko.local
+
+
+
+        systemctl restart bind9
+
+
+    Paso 4: Verificar la configuración y los errores de BIND
+        journalclt -xeu named.service
+        named-checkconf <- esta me da error
+        named-checkzone suzdalenko.local /etc/bind/db.suzdalenko.local <- esta esta bien
+    
+
+    Paso 5: Probar la configuración
+        nslookup ns1.suzdalenko.local 192.168.200.250
+        nslookup mail.empresa-tarea-daw05.local 192.168.200.250
+        nslookup aplicacion-web.empresa-tarea-daw05.local 192.168.200.250
+        dig google.com
+        host google.com 
+
+
+        nano /etc/hosts # añoadir a lo que ya hay
+
+        192.168.200.250 empresa-tarea-daw05.local
+        127.0.0.1 empresa-tarea-daw05.local
