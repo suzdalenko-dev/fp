@@ -73,7 +73,7 @@ pizda   IN     CNAME    suzdal.suzdalenko.local.
         nano /etc/resolv.conf            # no hacer nada en teoria se hara automaticamente
             nameserver 192.168.1.111
             nameserver 127.0.0.1
-            chattr +i /etc/resolv.conf   # sin esta parte
+            chattr +i /etc/resolv.conf   # muy importante
 
         nano /etc/hosts
             127.0.0.1       suzdalenko.local
