@@ -75,6 +75,10 @@ pizda   IN     CNAME    suzdal.suzdalenko.local.
             nameserver 127.0.0.1
             chattr +i /etc/resolv.conf   # sin esta parte
 
+        nano /etc/hosts
+            127.0.0.1       suzdalenko.local
+            192.168.1.111   suzdalenko.local
+
 
     Paso 4: Verificar la configuración y los errores de BIND
         journalclt -xeu named.service
