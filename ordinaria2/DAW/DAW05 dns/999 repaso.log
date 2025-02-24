@@ -40,17 +40,12 @@
         };
 
     Paso 3: Crear el archivo de zona
-        nano /etc/resolv.conf            # no hacer nada en teoria se hara automaticamente
-            nameserver 192.168.200.250
-            nameserver 127.0.0.1
-            chattr +i /etc/resolv.conf   # Bloquea el archivo para que no se pueda modificar *(para desbloquear sudo chattr -i /etc/resolv.conf)*
-
         cp /etc/bind/db.local /etc/bind/db.suzdalenko.local
         nano /etc/bind/db.suzdalenko.local
 
 
 
-
+;
 ; BIND data file for local loopback interface
 ;
 $TTL    604800
@@ -69,15 +64,16 @@ www     IN      A       192.168.1.111
 @       IN      AAAA    ::1
 suzdal  IN              192.168.1.111
 
-
-
-; CNAME record (alias de otro nombre)
-aplicacion-web IN CNAME www.redmine.suzdalenko.local. ; Alias para redmine aplicacion-web.suzdalenko.local
-openldap IN CNAME www.redmine.suzdalenko.local. ; Alias para redmine openldap.suzdalenko.local
-
+jui     IN     CNAME    suzdal.suzdalenko.local.
+pizda   IN     CNAME    suzdal.suzdalenko.local.
 
 
         systemctl restart bind9
+
+        nano /etc/resolv.conf            # no hacer nada en teoria se hara automaticamente
+            nameserver 192.168.1.111
+            nameserver 127.0.0.1
+            chattr +i /etc/resolv.conf   # sin esta parte
 
 
     Paso 4: Verificar la configuración y los errores de BIND
