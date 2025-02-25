@@ -45,27 +45,33 @@
 
 
 
-;
-; BIND data file for local loopback interface
-;
+
+
+; Archivo de zona para suzdalenko.local
 $TTL    604800
 @       IN      SOA     ns1.suzdalenko.local. root.suzdalenko.local. (
-                              3         ; Serial
-                         604800         ; Refresh
-                          86400         ; Retry
-                        2419200         ; Expire
-                         604800 )       ; Negative Cache TTL
-;
-@       IN      NS      ns1.suzdalenko.local.
-@       IN      A       192.168.1.111
-@       IN      A       192.168.1.111
-ns1     IN      A       192.168.1.111
-www     IN      A       192.168.1.111
-@       IN      AAAA    ::1
-suzdal  IN              192.168.1.111
+                          2025012203 ; Serial (número único que se incrementa en cada cambio)
+                          604800     ; Refresh (tiempo para que los esclavos sincronicen)
+                          86400      ; Retry (reintento si falla la sincronización)
+                          2419200    ; Expire (tiempo para que los esclavos descarten la zona si no hay contacto)
+                          604800 )   ; Negative Cache TTL (tiempo de vida para respuestas negativas)
 
-jui     IN     CNAME    suzdal.suzdalenko.local.
-pizda   IN     CNAME    suzdal.suzdalenko.local.
+; Nameservers
+@       IN      NS      ns1.suzdalenko.local. ; Servidor DNS principal para la zona
+
+; A records (direcciones IP para nombres específicos)
+@       IN      A       192.168.1.111 ; Dirección IP del dominio base empresa-tarea-daw05.local
+ns1     IN      A       192.168.1.111 ; Dirección IP del servidor maestro
+mail    IN      A       192.168.1.113 ; Dirección IP del servidor de correo
+www     IN      A       192.168.1.111 ; Dirección IP del servidor web
+www.redmine IN A        192.168.1.111 ; Dirección IP de redmine
+suzdal IN A 192.168.1.111
+
+
+; CNAME record (alias de otro nombre)
+aplicacion-web IN CNAME www.redmine.suzdalenko.local. ; Alias para redmine aplicacion-web.suzdalenko.local
+openldap IN CNAME www.redmine.suzdalenko.local. ; Alias para redmine openldap.suzdalenko.local
+
 
 
         systemctl restart bind9
