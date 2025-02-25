@@ -5,6 +5,8 @@ apt install ldap-utils -y
 
 2️⃣ Realiza la consulta LDAP al servidor maestro (192.168.200.250):
 ldapsearch -x -LLL -H ldap://192.168.200.250 -b dc=empresa-tarea-daw05,dc=local
+ldapsearch -x -LLL -H ldap://192.168.1.111 -b dc=suzdalenko,dc=local "(o=atencion_cliente)"
+
 
 Para ver la información de la organización, puedes ejecutar:
 o=atencion_cliente representa una organización (organization) dentro de la estructura del directorio LDAP.
