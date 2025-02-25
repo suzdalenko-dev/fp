@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página 2</title>
+  <link rel="icon" href="https://suzdalenko-dev.web.app/assets/img/favicon.png" sizes="32x32">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h3>Página 2  XMLHttpRequest JSON. Suzdalenko Alexey DWEC07</h3><br>
+  <div id="content"></div>
+  <script>
+    var xhr = new XMLHttpRequest();
+    let url = "https://jsonplaceholder.typicode.com/todos";
+    /* Usar el método open() con el tipo de solicitud ( GET ) y la URL de la API. */
+    xhr.open("GET", url, true);
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        let jsonData = JSON.parse(xhr.responseText);
+
+        console.log(jsonData);
+
+        let content = '';
+        jsonData.forEach(item => {
+
+          content += "<div>";
+          content += `<p>Int id: ${item.id}</p>`;
+          content += `<p>String titulo: ${item.title}</p>`;
+          content += `<p>Boolean: ${item.completed}</p>`;
+          content += "</div><br><hr><br>";
+        });
+
+        document.getElementById("content").innerHTML = content;
+      } else {
+        document.getElementById("content").textContent = `Error al obtener los datos: ${xhr.status} ${xhr.statusText}`;
+      }
+    }
+
+    xhr.onerror = function () {
+      document.getElementById("content").textContent = "Ocurrió un error durante la solicitud.";
+    };
+
+    /* Usar el método send() para enviar la solicitud. */
+    xhr.send();
+  </script>
+
+</body>
+</html>

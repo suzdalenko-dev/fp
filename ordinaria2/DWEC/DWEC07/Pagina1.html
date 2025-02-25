@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 1</title>
+    <link rel="icon" href="https://suzdalenko-dev.web.app/assets/img/favicon.png" sizes="32x32">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h3>Página 1 XMLHttpRequest XML. Suzdalenko Alexey DWEC07</h3><br>
+    <div id="content"></div>
+    <script>
+        var xhr = new XMLHttpRequest();
+        /*  
+            NOTA IMPORTANTE:
+    
+            Utilizo el archivo portada.xml que es un archivo de noticias del Diario Montañes en formato XML
+            le tengo localmente en mi proyecto, ya que no puedo acceder a la API de eldiariomontanes.es por el error de CORS
+            por que la API del diario montañes no permite el acceso desde un dominio diferente al suyo desde JAVASCRIPT,
+            unicamente se puede acceder aciedo una peticion desde otro servidor con los leguajes de servidor como PHP, Python, JAVA, etc.
+        */
+        let url = "portada.xml";
+        /* Usar el método open() con el tipo de solicitud ( GET ) y la URL de la API. */
+        xhr.open("GET", url, true);
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                let parser = new DOMParser();
+                let xmlData = parser.parseFromString(xhr.responseText, "application/xml");
+                let items = xmlData.getElementsByTagName("item");
+                console.log(items);
+                let parserError = xmlData.getElementsByTagName("parsererror");
+                if (parserError.length > 0) {
+                    console.error("XML Parsing Error:", parserError[0].textContent);
+                    return;
+                }
+                let content = '';
+                for (let i = 0; i < items.length; i++) {
+                    content += "<div>";
+                    let media = items[i].getElementsByTagName("media:content")[0];
+                    if (media) {
+                        let mediaUrl = media.getAttribute("url");
+                        content += `<img src="${mediaUrl}" alt="Imagen de la noticia" style="width: 111px; height: 111px;">`;
+                    }
+                    let title = items[i].getElementsByTagName("title")[0].textContent;
+                    let link = items[i].getElementsByTagName("link")[0].textContent;
+                    content += `<a href="${link}" target="_blank">${title}</a>`;
+                    content += "</div><br><hr><br>";
+                }
+                document.getElementById("content").innerHTML = content;
+            } else {
+                document.getElementById("content").textContent = `Error al obtener los datos: ${xhr.status} ${xhr.statusText}`;
+            }
+        };
+        xhr.onerror = function () {
+            document.getElementById("content").textContent = `Ocurrió un error durante la solicitud.`;
+        };
+
+        /* Usar el método send() para enviar la solicitud. */
+        xhr.send();
+    </script>
+</body>
+
+</html>

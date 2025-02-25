@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 3</title>
+    <link rel="icon" href="https://suzdalenko-dev.web.app/assets/img/favicon.png" sizes="32x32">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h3>Página 3 AJAX XML. Suzdalenko Alexey DWEC07</h3><br>
+    <div id="content"></div>
+
+    <script>
+        $(document).ready(function () {
+        /*  
+            NOTA IMPORTANTE:
+    
+            Utilizo el archivo portada.xml que es un archivo de noticias del Diario Montañes en formato XML
+            le tengo localmente en mi proyecto, ya que no puedo acceder a la API de eldiariomontanes.es por el error de CORS
+            por que la API del diario montañes no permite el acceso desde un dominio diferente al suyo desde JAVASCRIPT,
+            unicamente se puede acceder aciedo una peticion desde otro servidor con los leguajes de servidor como PHP, Python, JAVA, etc.
+        */
+            let url = "portada.xml";
+
+            // Realizar la petición AJAX
+            $.ajax({
+                url: url,
+                type: "GET",
+                dataType: "xml",
+                success: function (xml) {
+                    let content = '';
+                    $(xml).find('item').each(function () {
+                        console.log(this);
+                        content += "<div>";
+                        let title = $(this).find("title").text();
+                        let link = $(this).find("link").text();
+                        let mediaUrl = $(this).find("media\\:content").attr("url") || $(this).find("media:content").attr("url");
+                        if (mediaUrl) {
+                            content += `<img src="${mediaUrl}" alt="Imagen de la noticia" style="width: 111px; height: 111px;">`;
+                        }
+                        content += `<a href="${link}" target="_blank">${title}</a>`;
+                        content += "</div><br><hr><br>";
+                    });
+                    $("#content").html(content);
+                },
+                error: function (xhr, status, error) {
+                    $("#content").text(`Error al obtener los datos: ${xhr.status} ${xhr.statusText}`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
