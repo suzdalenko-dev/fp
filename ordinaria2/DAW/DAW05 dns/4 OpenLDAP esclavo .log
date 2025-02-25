@@ -12,6 +12,9 @@ Para ver la información de la organización, puedes ejecutar:
 o=atencion_cliente representa una organización (organization) dentro de la estructura del directorio LDAP.
 
 ldapsearch -x -LLL -H ldap://192.168.200.250 -b "o=atencion_cliente,dc=empresa-tarea-daw05,dc=local"
+ldapsearch -x -LLL -H ldap://192.168.200.250 -b "o=operador,dc=suzdalenko,dc=local"
+ldapsearch -x -LLL -H ldap://192.168.1.111 -b ou=atencion_cliente,dc=suzdalenko,dc=local
+ldapsearch -x -LLL -H ldap://192.168.1.111 -b ou=operador,dc=suzdalenko,dc=local
 
 3️⃣ Comprobar un usuario específico (op1):
 ldapsearch -x -LLL -H ldap://192.168.200.250 -b dc=empresa-tarea-daw05,dc=local "(uid=op1)"
