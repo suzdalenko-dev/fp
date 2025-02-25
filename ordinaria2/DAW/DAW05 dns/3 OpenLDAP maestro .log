@@ -19,7 +19,7 @@ systemctl status slapd
 ldapsearch -x -LLL -H ldap:/// -b dc=empresa-tarea-daw05,dc=local  # Verificar que el dominio esta configurado
 
 
-nano estructura.ldif
+nano estructura.ldif # Una estructura básica para atender a una unidad organizativa que contenga el departamento de atención al cliente
 
 dn: ou=operador,dc=empresa-tarea-daw05,dc=local
 objectClass: organizationalUnit
@@ -29,7 +29,7 @@ ldapadd -x -D "cn=admin,dc=empresa-tarea-daw05,dc=local" -W -f estructura.ldif
 ldapsearch -x -LLL -b dc=empresa-tarea-daw05,dc=local ou=operador # Verificar que la estructura se ha creado
 
 
-nano usuario.ldif
+nano usuario.ldif   # Un usuario que pertenezca al departamento de atención al cliente: op1 con contraseña oper
 
 
 dn: uid=op1,ou=operador,dc=empresa-tarea-daw05,dc=local
@@ -59,4 +59,4 @@ ldapsearch -x -LLL -D "cn=admin,dc=empresa-tarea-daw05,dc=local" -W -b "dc=empre
 
 # Probar el acceso con el usuario op1
 ldapwhoami -x -D "uid=op1,ou=operador,dc=empresa-tarea-daw05,dc=local" -w oper
-
+ldapwhoami -x -D "uid=op1,ou=operador,dc=empresa-tarea-daw05,dc=local" -w changeme
