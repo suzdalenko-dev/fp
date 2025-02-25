@@ -80,6 +80,30 @@ pizda   IN     CNAME    suzdal.suzdalenko.local.
             192.168.1.111   suzdalenko.local
 
 
+        1️⃣ Verifica los permisos del archivo de la zona en el maestro
+            chown bind:bind /etc/bind/db.suzdalenko.local
+            chmod 644 /etc/bind/db.suzdalenko.local
+
+            named-checkzone suzdalenko.local /etc/bind/db.suzdalenko.local
+
+
+        2️⃣ Habilitar transferencias de zona correctamente
+            zone "suzdalenko.local" {
+                type master;
+                file "/etc/bind/db.suzdalenko.local";
+                allow-query { any; };
+                allow-transfer { 192.168.1.113; };
+                notify yes;
+            };
+
+
+
+
+
+
+
+
+
     Paso 4: Verificar la configuración y los errores de BIND
         journalclt -xeu named.service
         named-checkconf <- esta me da error

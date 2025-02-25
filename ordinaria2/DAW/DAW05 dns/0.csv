@@ -6,3 +6,7 @@ CODEXP;NOMEXP;DATEXP;DATELIV;REFEXT;REFLIV;CODDEST;NOMDEST;DIRDEST;LOCDEST;CPDES
 ;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;
 IDSSCC;BULTOS;PESO;NUMPAL;SSCC;;;;;;;;;;;;;;
+
+
+CODEXP  Identifica el lugar de la carga (Proporcionado por STEF)
+NOMEXP  Nombre del lugar de la carga (Proporcionado por STEF) 

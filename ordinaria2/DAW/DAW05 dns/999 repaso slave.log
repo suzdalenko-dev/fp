@@ -18,6 +18,22 @@ iface enp0s8 inet static
     dns-nameservers 192.168.1.111
 
 
-sudo systemctl restart networking
+systemctl restart networking
 
-ping 192.168.1.111
+
+
+
+Paso 2: Configurar el servidor esclavo BIND
+
+apt install bind9 bind9utils bind9-doc
+
+nano /etc/bind/named.conf.local
+
+zone "suzdalenko.local" {
+    type slave;
+    masters { 192.168.1.111; }; # Dirección IP del servidor maestro
+    file "/var/cache/bind/db.suzdalenko.local";
+};
+
+systemctl restart bind9
+systemctl status bind9
