@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form id="countryForm">
+    <label for="countryName">Nombre del país:</label>
+    <input type="text" id="countryName" name="countryName" required>
+    <button type="submit">Buscar</button>
+</form>
+<div id="result"></div>
+<script>
+    document.getElementById('countryForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const countryName = document.getElementById('countryName').value;
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', `https://restcountries.com/v3.1/name/${countryName}`, true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                const response = JSON.parse(xhr.responseText);
+                if (response.length > 0) {
+                    const country = response[0];
+                    const capital = country.capital ? country.capital[0] : 'No disponible';
+                    const population = country.population ? country.population.toLocaleString() : 'No disponible';
+                    const currency = country.currencies ? Object.values(country.currencies)[0].name : 'No disponible';
+                    document.getElementById('result').innerHTML = `
+                        <p>Capital: ${capital}</p>
+                        <p>Población: ${population}</p>
+                        <p>Moneda: ${currency}</p>
+                    `;
+                } else {
+                    document.getElementById('result').innerHTML = '<p>No se encontraron resultados.</p>';
+                }
+            } else {
+                document.getElementById('result').innerHTML = '<p>Error al realizar la búsqueda.</p>';
+            }
+        };
+        xhr.onerror = function() {
+            document.getElementById('result').innerHTML = '<p>Error al realizar la búsqueda.</p>';
+        };
+        xhr.send();
+    });
+</script>
+</body>
+</html>

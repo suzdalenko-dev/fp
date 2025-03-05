@@ -9,7 +9,7 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-/ * Función para mostrar la tabla de usuarios */
+/* Función para mostrar la tabla de usuarios */
 function showTableUsers(all){
     document.getElementById('table_users').innerHTML = '';
     let tableContent = '';

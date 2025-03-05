@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="formContainer"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const formContainer = document.getElementById('formContainer');
+            
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = 'https://example.com/submit';
+
+            const nameLabel = document.createElement('label');
+            nameLabel.textContent = 'Nombre:';
+            const nameInput = document.createElement('input');
+            nameInput.type = 'text';
+            nameInput.name = 'name';
+            nameInput.required = true;
+
+            const emailLabel = document.createElement('label');
+            emailLabel.textContent = 'Email:';
+            const emailInput = document.createElement('input');
+            emailInput.type = 'email';
+            emailInput.name = 'email';
+            emailInput.required = true;
+
+            const messageLabel = document.createElement('label');
+            messageLabel.textContent = 'Mensaje:';
+            const messageTextarea = document.createElement('textarea');
+            messageTextarea.name = 'message';
+            messageTextarea.required = true;
+
+            const submitButton = document.createElement('button');
+            submitButton.type = 'submit';
+            submitButton.textContent = 'Enviar';
+
+            form.appendChild(nameLabel);
+            form.appendChild(nameInput);
+            form.appendChild(document.createElement('br'));
+            form.appendChild(emailLabel);
+            form.appendChild(emailInput);
+            form.appendChild(document.createElement('br'));
+            form.appendChild(messageLabel);
+            form.appendChild(messageTextarea);
+            form.appendChild(document.createElement('br'));
+            form.appendChild(submitButton);
+
+            formContainer.appendChild(form);
+
+            form.addEventListener('submit', function(event) {
+                let valid = true;
+                let errorMessage = '';
+
+                if (!nameInput.value) {
+                    valid = false;
+                    errorMessage += 'El nombre es obligatorio.\n';
+                }
+
+                if (!emailInput.value) {
+                    valid = false;
+                    errorMessage += 'El email es obligatorio.\n';
+                } else {
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(emailInput.value)) {
+                        valid = false;
+                        errorMessage += 'El email no tiene un formato válido.\n';
+                    }
+                }
+
+                if (!messageTextarea.value) {
+                    valid = false;
+                    errorMessage += 'El mensaje es obligatorio.\n';
+                }
+
+                if (!valid) {
+                    event.preventDefault();
+                    alert(errorMessage);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

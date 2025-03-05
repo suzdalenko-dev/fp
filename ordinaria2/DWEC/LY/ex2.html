@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda de países por Idioma</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #result {
+            margin-top: 20px;
+        }
+        .country {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Búsqueda de países por Idioma</h1>
+    <form id="languageForm">
+        <label for="language">Idioma:</label>
+        <input type="text" id="language" name="language" required>
+        <button type="submit">Buscar</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#languageForm').on('submit', function(event) {
+                event.preventDefault();
+                var language = $('#language').val();
+                $.ajax({
+                    url: `https://restcountries.com/v3.1/lang/${language}`,
+                    method: 'GET',
+                    success: function(data) {
+                        $('#result').empty();
+                        if (data.length > 0) {
+                            data.forEach(function(country) {
+                                $('#result').append(`<div class="country">${country.name.common}</div>`);
+                            });
+                        } else {
+                            $('#result').append('<div>No se encontraron países para el idioma especificado.</div>');
+                        }
+                    },
+                    error: function() {
+                        $('#result').empty();
+                        $('#result').append('<div>Hubo un error en la búsqueda. Por favor, intente nuevamente.</div>');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
