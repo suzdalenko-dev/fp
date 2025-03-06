@@ -5,7 +5,7 @@ Step 1: Install ProFTPD
 Step 2: Configure ProFTPD for Virtual User 
   cd /etc/proftpd
   nano /etc/proftpd/proftpd.conf
-    Include /etc/proftpd/modules.conf       # this line alredy exist
+    Include /etc/proftpd/modules.conf       # esta linea ya existe, escribir debajo !!!
     DefaultRoot ~
     RequireValidShell off
     AuthUserFile /etc/proftpd/ftpd.passwd
