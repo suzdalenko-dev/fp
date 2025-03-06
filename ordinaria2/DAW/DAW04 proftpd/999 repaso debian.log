@@ -127,7 +127,7 @@
                 chmod 777 /home/ftpusers/direccion                  !!! esta direccion pongo en defaul root si es que hace falta
 
                 nano /etc/proftpd/proftpd.conf
-                    Include /etc/proftpd/conf.d/*.conf        (ultima linea)
+                    Include /etc/proftpd/conf.d/*.conf        (ultima linea) !!! esta linea no la modifico, se queda como esta en el original
                 nano /etc/proftpd/conf.d/virtual.conf
 
                     <VirtualHost 192.168.83.222>

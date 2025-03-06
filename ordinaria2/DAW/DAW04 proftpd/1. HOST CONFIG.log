@@ -24,7 +24,7 @@ Step 3: Create the Virtual User and home directory for virtual user
 
 Step 4: Configure VirtualHost
   nano /etc/proftpd/proftpd.conf
-    Include /etc/proftpd/conf.d/*
+    Include /etc/proftpd/conf.d/*           !!! esta linea no la modifico, se queda como esta en el original
   nano /etc/proftpd/conf.d/virtual.conf
 
   <VirtualHost 192.168.100.250>
