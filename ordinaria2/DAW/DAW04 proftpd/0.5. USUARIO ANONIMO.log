@@ -7,6 +7,8 @@ para activar el usuario anonimo
     nano proftpd.conf
     y tengo que descomentar todo relacionado con el usuario anonimo
 
+    usuario ftp
+
     <Anonymous ftp>
         User
         Group
