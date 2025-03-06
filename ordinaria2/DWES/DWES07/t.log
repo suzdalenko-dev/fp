@@ -1,5 +1,8 @@
+which php
+where php
 composer self-update
 composer create-project laravel/laravel suzdalenko-alexey
+
 
 php artisan migrate
 php artisan serve
@@ -16,3 +19,5 @@ php artisan migrate:rollback
 php artisan make:model Tienda -m
 
 php artisan make:controller ProductoController
+
+php -v
