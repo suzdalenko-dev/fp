@@ -84,5 +84,21 @@
             });
         });
     </script>
+    <style>
+        .suzdalenko_input_class {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.classList.add('suzdalenko_input_class');
+            });
+        });
+    </script>
 </body>
 </html>
