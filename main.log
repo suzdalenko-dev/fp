@@ -1,0 +1,28 @@
+To start the Laravel development server, you need to run the `php artisan serve` command in your terminal. Here is how you can do it:
+
+1. Open your terminal or command prompt.
+2. Navigate to your Laravel project directory. For example:
+    ```sh
+    cd /e:/fp/
+    ```
+3. Run the following command to start the Laravel development server:
+    ```sh
+    php artisan serve
+    ```
+
+This will start the server and you can access your Laravel application at `http://localhost:8000`.
+
+Make sure you have PHP and Composer installed on your system before running the command.
+To create a new model in Laravel, you can use the `php artisan make:model` command. Here is how you can do it:
+
+1. Open your terminal or command prompt.
+2. Navigate to your Laravel project directory. For example:
+    ```sh
+    cd /e:/fp/
+    ```
+3. Run the following command to create a new model:
+    ```sh
+    php artisan make:model ModelName
+    ```
+
+Replace `ModelName` with the name of the model you want to create. This will generate a new model file in the `app/Models` directory.
