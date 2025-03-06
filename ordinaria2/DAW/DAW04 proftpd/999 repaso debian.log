@@ -93,7 +93,7 @@
                     iface enp0s8 inet static
                         address 192.168.83.222
                         netmask 255.255.255.0
-                        gateway 192.168.83.74
+                        gateway 192.168.83.74     # LA IP DE LA MAQUINA HOST
                         dns-nameservers 8.8.8.8 8.8.4.4
 
                 systemctl restart networking
@@ -127,7 +127,7 @@
                 chmod 777 /home/ftpusers/direccion                  !!! esta direccion pongo en defaul root si es que hace falta
 
                 nano /etc/proftpd/proftpd.conf
-                    Include /etc/proftpd/conf.d/*.conf        (ultima linea)
+                    Include /etc/proftpd/conf.d/*.conf        (ultima linea) !!! esta linea no la modifico, se queda como esta en el original
                 nano /etc/proftpd/conf.d/virtual.conf
 
                     <VirtualHost 192.168.83.222>

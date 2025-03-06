@@ -21,3 +21,4 @@ php artisan make:model Tienda -m
 php artisan make:controller ProductoController
 
 php -v
+php -S 0.0.0.0:8000
