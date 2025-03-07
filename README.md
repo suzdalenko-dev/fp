@@ -1,6 +1,6 @@
 **¿Cuál de las siguientes son formatos de imágenes vectoriales?**
 
-**Pregunta 1**
+**¿Cuáles de las siguientes son formatos de imágenes de mapas de bits?**
 Seleccione una o más de una:
 
 a. JPG.
@@ -17,3 +17,12 @@ a. Verdadero.
 b. Falso.     +
 
 
+**¿Cuáles de las siguientes son formatos de imágenes de mapas de bits?**
+
+**Pregunta 3**
+Seleccione una o más de una:
+
+a. PSD. +
+b. PSP. +
+c. ODG.
+d. PNG. +
