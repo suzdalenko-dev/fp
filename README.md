@@ -813,3 +813,79 @@ c. linked.
 d. hover. +
 
 
+**Se pueden considerar elementos interactivos de la página:**
+
+a. Una zona de "regístrate para poder realizar la descarga". +
+b. Una zona de "para participar rellena esta encuesta". +
+c. Una zona de un elemento que cambia cada cierto tiempo de color.
+d. Una zona de "envíanos tu comentario". +
+
+
+**Los siguientes elementos de formulario permiten establecer valores por defecto que le serán mostrados al usuario.**
+
+a. input type="area"
+b. input type="text" +
+c. input type="password" +
+d. input type="radio" +
+
+
+Cuando una etiqueta div tiene como atributo id el valor 'ejemplo' se puede emplear para acceder al elemento con el método:
+
+a.document.getElementByTagName("ejemplo")[0] si hay varios elementos div y el que tiene id="ejemplo" es el primero.
+b.document.getElementByTagName("ejemplo")["div"].
+c.document.getElementByTagName("div")["ejemplo"]. +
+d.document.getElementByTagName("ejemplo").
+
+
+**El método click que simula el clic del ratón se suele emplear en elementos que tienen en el atributo type los siguientes valores**
+
+a. radio. +
+b. submit. +
+c. label.
+d. checkbox. +
+
+
+**El modelo de objetos de documento define la forma en la que interactúan entre sí los objetos y elementos que forman parte de un documento y su relación con el navegador. ¿Verdadero o falso?**
+
+a. Verdadero 
+b. Falso +
+
+
+Para añadir un comportamiento interactivo solemos hacer uso de:
+
+a. PHP.
+b. Las reglas de estilo. +
+c. DHTML. +
+d. JSP.
+
+
+**¿Cuál es el nombre del método que sirve para detectar cuándo se abandona el foco de un elemento del formulario?**
+
+a. blur. +
+b. deselect.
+c. quitfocus.
+d. escape.
+
+
+¿Cuáles de los siguientes métodos son equivalentes a la hora de acceder al elemento <div class="div1" id="miDiv">?
+
+a. document.getElementById("div1").
+b. document.getElementByTagName("div")[0]. +
+c. document.getElementById("miDiv"). +
+d. document.getElementByTagName("div").
+
+
+**¿Cuáles son ejemplos de usos habituales de las hojas de estilo para añadir interactividad?**
+
+a. Alternancia de imágenes. +
+b. Galería de imágenes. +
+c. Validación de los datos de un formulario.
+d. Menús de navegación. +
+
+
+El objeto de nivel superior del modelo DOM es el
+
+a. window.
+b. document.
+c. form.
+d. browser. + !!!
