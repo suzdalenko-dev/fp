@@ -81,3 +81,74 @@ a. Los logos se emplean para complementar los textos en los enlaces.
 b. Los iconos conviene hacerlos en formato JPG con una gran cantidad de detalle.
 c. Los banner deben respetar la línea de diseño del sitio web en el que se encuentran. +
 d. Los banner sirven para incluir publicidad en una página web.
+
+
+**¿Cuál de los siguientes es un formato de imagen apropiado para la web?**
+
+a. BMP.
+b. PNG. +
+c. PSP.
+d. ODG
+
+
+¿Cuáles de las siguientes licencias son Creative Commons?
+
+a. BY-NC. +
+b. BY-CI.
+c. BY-SA. +
+d. BY-ND +
+
+
+**¿Qué dos mundos podemos decir que se unen en la imagen digital?**
+
+a. Imaginería.
+b. Pintura.    +
+c. Fotografía. +
+d. Iconografía. 
+
+
+**¿Cuál NO es una labor de una entidad de gestión colectiva?**
+
+a. Administrar los derechos de propiedad intelectual conferidos, con sujeción a la legislación vigente y a sus estatutos.
+b. Realizar auditorías externas. +
+c. Realizar el reparto de la recaudación neta.
+d. Proteger y defender los derechos de propiedad intelectual contra las infracciones que se cometan.
+
+
+**¿Cuáles de las siguientes afirmaciones son correctas?**
+
+a. Los métodos de compresión que eliminan la información visual redundante son conocidos como métodos "lossless".
+b. Los métodos de compresión empleados en el formato JPG son con pérdida de información. +
+c. Cuanto más alta es la tasa de compresión menor es la pérdida de calidad aparente.
+d. El método LZW +
+
+
+**¿Cuáles son los tipos de imagen que conoces?**
+
+a. Matriciales. +
+b. Vectoriales. +
+c. Mapas de bytes.
+d. Mapas de vectores.
+
+
+Cambiar el brillo o el contraste implica una conversión de la imagen. ¿Verdadero o falso?
+
+a. Verdadero.
+b. Falso. +
+
+
+Las entidades de gestión colectiva se han de coordinar con
+_____ con el fin de garantizar la máxima transparencia en su gestión.
+Pregunta 9Seleccione una:
+
+a. el Ministerio de hacienda
+b. el Ministerio de fomento
+c. el Ministerio de defensa
+d. el Ministerio de cultura +
+
+
+**¿Cuáles de las siguientes funcionalidades NO suelen estar presentes en un programa visor de imágenes puro?**
+a. Función de rotación de la imagen en ambos sentidos (horario y antihorario).
+b. Función de conversión entre los diferentes formatos de imagen. +
+c. Función de compresión de imágenes. +
+d. Función de optimización de imágenes para la web. +
