@@ -7,7 +7,6 @@ d. ODG. +
 
 
 **¿Cuáles de las siguientes son formatos de imágenes de mapas de bits?**
-Seleccione una o más de una:
 
 a. JPG.
 b. SVG. +
@@ -21,8 +20,6 @@ b. Falso.     +
 
 
 **¿Cuáles de las siguientes son formatos de imágenes de mapas de bits?**
-
-Seleccione una o más de una:
 
 a. PSD. +
 b. PSP. +
@@ -53,7 +50,6 @@ Falso +
 
 
 Si quisieras otorgar una licencia que permita a los demás que utilicen tu obra y que puedan hacer modificaciones sobre ella siempre que reconozcan la titularidad de la obra original y no se puedan obtener beneficios ni con tu obra ni con la que de ella se derive, ¿cuáles de las licencias de Creative Commons te valdrían?
-Pregunta 7Seleccione una o más de una:
 
 a. BY.
 b. BY-NC-SA. +
@@ -152,3 +148,374 @@ a. Función de rotación de la imagen en ambos sentidos (horario y antihorario).
 b. Función de conversión entre los diferentes formatos de imagen. +
 c. Función de compresión de imágenes. +
 d. Función de optimización de imágenes para la web. +
+
+
+**Existe un plazo máximo en días desde que se divulga una obra hasta que se inscribe obligatoriamente en el registro. ¿Verdadero o falso?**
+
+a. Verdadero
+b. Falso +
+
+
+**¿Cuáles de las siguientes licencias NO pertenecen a las Creative Commons?**
+
+a. Derechos reservados
+b. Atribución.
+c. Dominio público. +
+d. Copyleft. +
+
+
+Optimizar una imagen para la web implica siempre una pérdida de información y una pérdida de resolución de la imagen ¿Verdadero o falso?
+
+a. Verdadero
+b. Falso +
+
+
+**¿Qué dos características definen la fotografía?**
+
+a. Objetiva. +
+b. Subjetiva.
+c. Realista. +
+d. Irreal.
+
+
+**¿Cuáles de las siguientes funcionalidades suelen estar presentes en un programa editor de imágenes profesional pero no lo están en un programa visor?**
+
+a. Selección. +
+b. Rotación.
+c. Clonación. +
+d. Sobreexposición. +
+
+
+**¿Es obligatorio mostrar de alguna manera que los derechos de explotación de una imagen están reservados?**
+
+a.No hay obligación pero, en caso de hacerlo, lo haremos anteponiendo al nombre la letra c entre paréntesis con precisión del año y lugar de divulgación de la imagen.
+b.Sí, mediante la palabra reservado.
+c.No, pero debemos hacerlo para garantizar nuestros derechos.
+d.Sí hay obligación y lo haremos anteponiendo al nombre la letra c entre paréntesis con precisión del año y lugar de divulgación de la imagen. +
+
+
+**¿Cuántos registros generales de la propiedad intelectual hay en España?**
+
+a. Uno por cada comunidad autónoma.
+b. Uno. +
+c. Uno por cada provincia.
+d. Uno por cada ciudad de más de 100.000 habitantes.
+
+
+**Una característica de las imágenes construidas con objetos geométricos es que su peso es proporcional al tamaño de la imagen. ¿Verdadero o falso?
+a. Verdadero
+b. Falso +
+
+
+El formato RAW, empleado en algunas cámaras de fotos digitales, almacena toda la información de la fotografía sin realizar ninguna compresión. Si la cámara de fotos tiene 8 megapíxeles de resolución y almacena las fotos en color con una profundidad de color de 48 bits/píxel ¿cuánto ocupará una foto en disco?
+
+a. Cerca de 460 KB.
+b. Cerca de 460 MB.
+c. Cerca de 46 KB.
+d. Cerca de 46 MB. +
+
+
+**Divulgar una obra NO es lo mismo que publicar una obra. ¿Verdadero o falso?**
+
+a. Verdadero +
+b. Falso
+
+
+El elemento
+_____ es parte de la especificación HTML 4.01, y es el mecanismo recomendado para llamar a los plugins.
+Pregunta 1Seleccione una:
+
+a. embed
+b. object +
+c. applet
+d. param
+
+
+Los vídeos para la Web suelen tener una tasa superior a 30 fotogramas por segundo. ¿Verdadero o falso?
+
+a. Verdadero 
+b. Falso +
+
+
+**Cuando convertimos un archivo de sonido que contiene un discurso grabado, ¿qué características podemos variar?**
+
+a. La duración del discurso.
+b. Poner el sonido en mono si es estéreo. +
+c. Poner el sonido en estéreo si es mono. +
+d. El contenido del discurso.
+
+
+**La línea de tiempo o Timeline es la zona de un programa de edición de vídeo donde**
+
+a. Se añaden las escenas que va a contener el vídeo. +
+b. Se puede ver unas marcas temporales en un formato de horas:minutos:segundos. +
+c. Se incorporan los efectos de vídeo.
+d. Se puede previsualizar el vídeo.
+
+
+La extensión de archivo de vídeo
+_____ suele formar parte del formato contenedor ASF.
+
+a. QTV
+b. MOV
+c. FLV
+d. WMV +
+
+
+**Con respecto a los archivos MIDI, ¿cuáles de estas afirmaciones son correctas?**
+
+a. Almacenan órdenes que son interpretadas por la tarjeta de sonido. +
+b. Es un formato de compresión sin pérdida.
+c. Pueden resultar adecuados para la Web por ocupar poco espacio. +
+d. Es un formato de compresión con pérdida.
+
+
+Utilizar el elemento
+_____ del HTML es lo más adecuado para incrustar un archivo de sonido en una página web.
+
+a. table
+b. embed
+c. object +
+d. ancla
+
+
+El peso de un archivo de vídeo está relacionado con su duración. ¿Verdadero o falso?
+
+a. Verdadero +
+b. Falso
+
+
+**¿Qué formas conoces de incorporar un vídeo en una Web?**
+
+a. Enlazándolo. +
+b. Descargándolo.
+c. Incrustándolo. +
+d. Haciendo streaming. +
+
+
+A la hora de convertir el formato de un archivo de vídeo, ¿qué características podemos modificar?
+
+a. El tamaño de los fotogramas. +
+b. La duración total del vídeo.
+c. El orden de los fotogramas.
+d. La tasa de fotogramas. +
+
+
+**En el caso de los archivos de sonido y la accesibilidad en la Web, ¿cuál de estas afirmaciones es correcta?**
+
+a. Si el archivo de sonido contiene un discurso grabado, se debe proporcionar un enlace a una transcripción textual inmediatamente antes del enlace al archivo de audio.
+b. Si el archivo de sonido contiene un discurso grabado, se debe escribir como contenido de la página todo el discurso.
+c. Si el archivo de sonido contiene un discurso grabado, se debe proporcionar un enlace a una transcripción textual inmediatamente después del enlace al archivo de audio. +
+d. Si el archivo de sonido contiene un discurso grabado, no es necesario hacer nada.
+
+
+**Hablando de un sonido, ¿cuál de las siguientes respuestas es la cualidad contraria a "AGUDO"?**
+
+a. Corto.
+b. Grave. +
+c. Suave.
+d. Timbre.
+
+
+Dos de las características de un sonido que nos importan a la hora de su incorporación en una Web son:
+
+a. Tamaño y Frecuencia de la muestra. +
+b. Timbre y Bitrate.
+c. Canales e Intensidad.
+d. Tono y Frecuencia de muestreo.
+
+
+**La importación de sonido consiste en extraer el audio de un formato contenedor como el WMA y almacenarlo en un formato propio de sonido.
+
+a. Verdadero
+b. Falso +
+
+
+**¿Cuáles son formatos de compresión de sonido sin pérdida?**
+
+a. WMA.
+b. FLAC. +
+c. ALE. +
+d. Monkey's Audio. +
+
+
+La extensión de archivo
+_____ es propia de QuickTime.
+
+a. QTV
+b. MOV +
+c. FLV
+d. WMV
+
+
+El formato MOV emplea en la codificación del audio siempre el códec MPEG-4. ¿Verdadero o falso?
+
+a. Verdadero
+b. Falso +
+
+
+**¿Cuáles son las características más importantes que debemos tener en cuenta a la hora de incluir un sonido en la Web?**
+
+a. Número de canales. +
+b. Bitrate. +
+c. Peso del archivo. +
+d. El sonido en sí.
+
+
+La
+_____ está relacionada con el tamaño del fotograma.
+Pregunta 10Seleccione una:
+
+a. duración del clip
+b. digitalización del clip
+c. sensación de movimiento
+d. relación de aspecto +
+
+
+**¿Cuáles de los siguientes son formatos de vídeo?**
+
+a. WMA.
+b. AAC.
+c. WebM. +
+d. RV. +
+
+
+Para realizar un vídeo para la Web debemos
+
+a. Primero grabarlo en un formato adecuado para la Web y después editarlo.
+b. Primero grabar las secuencias con la duración justa para después unirlas.
+c. Primero planificarlo y después editarlo y montarlo. +
+d. Buscar un vídeo en Internet y recortarlo para que no pese más de 10 MB.
+
+
+**¿Qué características del vídeo debemos tener en cuenta a la hora de optimizarlo para la Web?**
+
+a. La iluminación.
+b. El mensaje.
+c. El tamaño de cada fotograma. +
+d. El número de fotogramas por segundo. +
+
+
+**¿Cuáles son formatos de sonido que se suelen utilizar en la Web?**
+
+a. OGG. +
+b. RA. +
+c. MPEG-4.
+d. WMA.+
+
+
+**¿Cuáles de estas operaciones se consideran exportación de vídeo?**
+
+a. Grabar el vídeo sin el audio.
+b. Cambiar los códecs de compresión del vídeo y/o audio. +
+c. Almacenarlo para que se pueda visualizar en un móvil. 
+d. Cambiar el formato empleando los mismos códecs.
+
+
+**La operación de exportación de vídeo no tiene por que ser una operación de conversión de formato. ¿Verdadero o falso?**
+
+a. Verdadero +
+b. Falso 
+
+
+**Si pretendemos hacer streaming con un vídeo su tasa de bit debe ser**
+
+a. Superior a 128 Kbps.
+b. Aquella que permita al usuario reproducirlo sin interrupciones. +
+c. Inferior a 128 Kbps.
+d. Aquella que permita al usuario grabarlo durante la reproducción.
+
+
+**Cuando convertimos un archivo de sonido que contiene un tema musical es conveniente establecer una frecuencia de muestreo por debajo de 20.000 
+
+a. Verdadero
+b. Falso +
+
+
+**¿Qué operaciones se suelen hacer en un programa de edición de vídeo?**
+
+a. Recortar escenas. +
+b. Sustituir el audio original. 
+c. Añadir efectos de vídeo. +
+d. Añadir un sonido. +
+
+
+Un códec es un algoritmo de compresión/descompresión usado durante la generación de un vídeo digital. ¿Verdadero o falso?
+
+a. Verdadero +
+b. Falso
+
+
+Los gráficos son la base de cualquier animación. ¿Verdadero o falso?
+
+a. Verdadero +
+b. Falso
+
+
+**La importación de vídeo o audio añade dicho vídeo o audio a la lista de nombres del panel Biblioteca. ¿Verdadero o falso?**
+
+a. Verdadero +
+b. Falso
+
+
+Cuando empleamos un símbolo varias veces en la misma animación decimos que empleamos
+_____ del símbolo.
+
+a varios duplicados
+b. varias copias
+c. varios ejemplares
+d. varias instancias +
+
+
+**¿Cuáles de los siguientes son tipos de sincronismo de audio en Flash?**
+
+a. Detener. +
+b. Fluido. 
+c. Evento. +
+d. Inicio. +
+
+
+**En Flash, al separar las letras de un texto clásico dejan de ser letras y se convierten en un objeto de dibujo. ¿Verdadero o falso?**
+
+a. Verdadero
+b. Falso +
+
+
+**¿Cuáles de las siguientes operaciones se pueden realizar con las capas de una animación?**
+
+a. Ocultar. +
+b. Combinar visibles. 
+c. Bloquear. +
+d. Cambiar el nombre. +
+
+
+**La línea de tiempo de un símbolo de clip de película depende de la duración de la línea de tiempo de la escena. ¿Verdadero o falso?**
+
+a. Verdadero
+b. Falso +
+
+
+**El filtro de efecto iluminado**
+
+a.Establece el porcentaje de color del objeto.
+b. Establece la transparencia del objeto.
+c. Cambia el brillo del objeto. 
+d. Degrada el color del borde del objeto. +
+
+
+**Una animación con un valor FPS de 12, cuya escena principal tiene 12 fotogramas y en el primero contiene un clip de película que tiene 48 fotogramas. ¿Cuánto dura?**
+
+
+a. Siempre el resultado de dividir 24 entre el valor de FPS.
+b. 4 segundos. +
+c. 1 segundo.
+d. Depende del valor de FPS que tenga el clip. 
+
+
+**En Flash, ¿cuáles de las siguientes afirmaciones son verdaderas?**
+Seleccione una o más de una:
+
+a. El texto seleccionable puede ser editado por el usuario.
+b. El texto de introducción de texto no puede ser editado por el usuario.
+c. El texto estático no puede ser editado por el usuario. +
+d. El texto editable no puede ser seleccionado por el usuario.
