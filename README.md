@@ -710,7 +710,6 @@ d. Aspecto. +
 
 
 **Con respecto al Javascript, ¿cuáles de las afirmaciones siguientes son correctas?**
-Seleccione una o más de una:
 
 a. Tiene una sintaxis compleja.
 b. Sirve para extender las capacidades del HTML. +
@@ -719,7 +718,6 @@ d. Es interpretado. +
 
 
 **Todos los formularios suelen tener al menos dos botones cuyas funciones son:**
-Seleccione una o más de una:
 
 a. Ejecutar la acción. +
 b. Colocarse en el primer elemento.
@@ -735,7 +733,6 @@ b. Falso
 
 
 **Al utilizar elementos interactivos en la página no debemos olvidar el compromiso con**
-Seleccione una o más de una:
 
 a. La usabilidad. +
 b. El cliente.
@@ -749,3 +746,70 @@ a. Los usuarios que usan Internet Explorer.
 b. Las páginas que se validan en el servidor.
 c. Todos los usuarios.
 d. Los usuarios con Javascript activado. + 
+
+
+**¿Cuáles de las siguientes asociaciones son correctas cuando relacionamos el modelo DOM con el HTML?**
+
+a. cabecera-metatag.
+b. propiedad-atributo. +
+c. objeto-etiqueta. +
+d. cuerpo-body. 
+
+
+**El diseño interactivo debe estar centrado en**
+
+a. los gráficos.
+b. el usuario. +
+c. el cliente.
+d. los enlaces.
+
+
+**Para hacer una alternancia de imágenes con CSS necesitamos emplear la pesudoclase...**
+
+a. focus.
+b. linked.
+c. hover. +
+d. active.
+
+
+Los usos más común de Javascript en la validación de datos de un formulario son:
+
+a. La comprobación de que al menos se ha marcado uno de cada elemento tipo radio con el mismo valor del atributo name.
+b. La correspondencia del contenido de los campos con sus patrones correspondientes. +
+c. La comprobación de que están los datos marcados como obligatorios. +
+d. La comprobación de que están todos los datos.
+
+
+**La lista de opciones configurada para la selección múltiple es equivalente a:**
+
+a. Nada, no existe ninguna otra opción equivalente.
+b. Escribir varias líneas en un elemento de área de texto.
+c. Marcar varios botones de opción del mismo grupo.
+d. Marcar varias casillas de verificación. +
+
+
+**¿Qué elementos multimedia permite desactivar el sistema Windows?**
+
+a. El sonido de los vídeos.
+b. La activación de las animaciones de las páginas web. +
+c. La visualización de imágenes. +
+d. La reproducción de los sonidos de las páginas web. +
+
+
+
+**El HTML estático es**
+
+a. Aquel cuyo contenido textual no varía.
+b. Aquel donde el contenido que se muestra en el navegador no se actualiza nunca.
+c. Aquel que no está generado por ningún programa ejecutado en el lado del servidor. +
+d. Aquel que carece de interactividad.
+
+
+**Para conseguir un formulario más interactivo con CSS podemos emplear las pseudoclases ...**
+
+a. active. 
+b. focus. +
+c. linked.
+d. hover. +
+
+
