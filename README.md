@@ -1,29 +1,19 @@
-# README #
+**¿Cuál de las siguientes son formatos de imágenes vectoriales?**
 
-This README would normally document whatever steps are necessary to get your application up and running.
+**Pregunta 1**
+Seleccione una o más de una:
 
-### What is this repository for? ###
+a. JPG.
+b. SVG. +
+c. AI.  +
+d. ODG. +
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+**Una característica de las imágenes rasterizadas es que se construyen con funciones geométricas. ¿Verdadero o falso?**
 
-### How do I get set up? ###
+**Pregunta 2**
+Seleccione una:
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+a. Verdadero.
+b. Falso.     +
 
-### Contribution guidelines ###
 
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
