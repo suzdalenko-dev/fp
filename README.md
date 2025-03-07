@@ -62,5 +62,22 @@ d. BY-NC.    +
 
 
 Las imágenes vectoriales no pierden calidad cuando se aumentan de tamaño. ¿Verdadero o falso?
+
 Verdadero + 
 Falso
+
+
+El formato RAW, empleado en algunas cámaras de fotos digitales, almacena toda la información de la fotografía sin realizar ninguna compresión. Si la cámara de fotos tiene 10 megapíxeles de resolución y almacena las fotos en color con una profundidad de color de 36 bits/píxel ¿cuánto ocupará una foto en disco?
+
+a. Cerca de 43 MB. +
+b. Cerca de 43 KB.
+c. Cerca de 430 KB.
+d.Cerca de 430 MB.
+
+
+¿Cuáles de las siguientes afirmaciones son incorrectas?
+
+a. Los logos se emplean para complementar los textos en los enlaces.
+b. Los iconos conviene hacerlos en formato JPG con una gran cantidad de detalle.
+c. Los banner deben respetar la línea de diseño del sitio web en el que se encuentran. +
+d. Los banner sirven para incluir publicidad en una página web.
