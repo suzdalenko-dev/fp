@@ -669,3 +669,83 @@ d. aumento progresivo
 
 a. Verdadero +
 b. Falso
+
+
+**Para poder acceder a la propiedad de un elemento dentro del modelo DOM es necesario identificar el elemento dentro del código mediante el atributo**
+
+a. title.
+b. name.
+c. class.
+d. id +
+
+
+El empleo de elementos interactivos es _____ intentando lograr una web más dinámica.
+
+a.una forma de hacer más accesible la página
+b.una forma de canalizar la creatividad de las personas que diseñan interfaces
+c.una forma de acercarse al usuario y hacerlo participar +
+d. emplear gran cantidad de imágenes en movimiento
+
+
+**La caja de texto permite escribir al usuario varias líneas de texto. ¿Verdadero o falso?**
+
+a. Verdadero 
+b. Falso +
+
+
+**La orden `document.getElementsByTagName("div")["DatosEspeciales"]`:**
+
+a. Obtiene el elemento cuyo TagName es DatosEspeciales.
+b. Obtiene el elemento div con id="DatosEspeciales". +
+c. Obtiene los elementos cuyo TagName es div.
+d. Obtiene un elemento empleando un vector asociativo.
+
+
+**¿Cuáles son los elementos del desarrollo de una interfaz que debemos mantener separados en beneficio de la accesibilidad, usabilidad y mantenimiento de las páginas?**
+
+a. Comportamiento. +
+b. Contenido. +
+c. Texto.
+d. Aspecto. +
+
+
+**Con respecto al Javascript, ¿cuáles de las afirmaciones siguientes son correctas?**
+Seleccione una o más de una:
+
+a. Tiene una sintaxis compleja.
+b. Sirve para extender las capacidades del HTML. +
+c. Es idóneo para detectar las acciones del usuario. +
+d. Es interpretado. +
+
+
+**Todos los formularios suelen tener al menos dos botones cuyas funciones son:**
+Seleccione una o más de una:
+
+a. Ejecutar la acción. +
+b. Colocarse en el primer elemento.
+c. Limpiar los datos y dejar el formulario vacío de nuevo. +
+d. Pasar al siguiente elemento.
+
+
+
+**El empleo de elementos interactivos sirve para fidelizar a los usuarios que visitan la página. ¿Verdadero o falso?**
+
+a. Verdadero +
+b. Falso
+
+
+**Al utilizar elementos interactivos en la página no debemos olvidar el compromiso con**
+Seleccione una o más de una:
+
+a. La usabilidad. +
+b. El cliente.
+c. La accesibilidad. +
+d. El diseño.
+
+
+**El uso de Javascript para la validación de datos de un formulario mejora el tiempo de respuesta de**
+
+a. Los usuarios que usan Internet Explorer.
+b. Las páginas que se validan en el servidor.
+c. Todos los usuarios.
+d. Los usuarios con Javascript activado. + 
