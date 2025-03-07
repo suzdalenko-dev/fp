@@ -513,9 +513,81 @@ d. Depende del valor de FPS que tenga el clip.
 
 
 **En Flash, ¿cuáles de las siguientes afirmaciones son verdaderas?**
-Seleccione una o más de una:
 
 a. El texto seleccionable puede ser editado por el usuario.
 b. El texto de introducción de texto no puede ser editado por el usuario.
 c. El texto estático no puede ser editado por el usuario. +
 d. El texto editable no puede ser seleccionado por el usuario.
+
+
+Las animaciones se suelen utilizar en la Web:
+
+a. para insertar publicidad. +
+b. para añadir funcionalidad.
+c. para conseguir mayor seguimiento.
+d. para aumentar el peso de la Web.
+
+
+El Tamaño de un documento en una animación es el peso del archivo. ¿Verdadero o falso?
+
+a. Verdadero
+b. Falso +
+
+
+**¿Que motores de texto admite la versión de Adobe Flash Professional CS5.5?**
+
+a. Texto clásico. +
+b. Texto TLF. +
+c. Texto simple.
+d. Texto SWF.
+
+
+Una secuencia de fotogramas iguales será de color
+
+a. Gris si tienen algún objeto. +
+b. Verde si pertenecen a una interpolación de forma. 
+c. Azul si pertenecen a una interpolación de movimiento. 
+d. Blanco si están todos vacíos. +
+
+
+**¿Cuáles de las representaciones siguientes son válidas en los fotogramas de fin de secuencia?**
+
+a. Rectángulo sobre fondo verde. 
+b. Rectángulo sobre fondo gris. +
+c. Rectángulo sobre fondo azul. 
+d. Rectángulo sobre fondo blanco. +
+
+
+**En la animación fotograma a fotograma todos los fotogramas son clave. ¿Verdadero o falso?**
+
+a. Verdadero +
+b. Falso
+
+
+Animación es un proceso utilizado para dar la sensación
+_____ a imágenes o dibujos.
+
+a.De verosimilitud
+b.De falsedad
+c.De realismo
+d.De movimiento +
+
+
+**Si modificamos una instancia de un símbolo las modificaciones se extienden a todas las instancias que tengamos del mismo. ¿Verdadero o falso?**
+
+a. Verdadero
+b. Falso +
+
+
+**La Terminación de la acción es el elemento de la animación que transmite la sensación lentitud. ¿Verdadero o falso?**
+
+a. Verdadero
+b. Falso +
+
+
+**Los objetos gráficos son**
+
+a. Los elementos teóricos del diseño.
+b. Los elementos de relación del diseño.
+c. Los elementos que transmiten la sensación de movimiento en una animación.
+d. Los elementos visuales del diseño. +
