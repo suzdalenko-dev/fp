@@ -591,3 +591,81 @@ a. Los elementos teóricos del diseño.
 b. Los elementos de relación del diseño.
 c. Los elementos que transmiten la sensación de movimiento en una animación.
 d. Los elementos visuales del diseño. +
+
+
+**La interpolación de movimiento clásica sólo nos permite realizar cambios de posición con trayectorias rectilíneas. ¿Verdadero o falso?**
+
+a. Verdadero +
+b. Falso 
+
+
+Un clip de película es cualquier
+_____ de una animación en el que se realizan transformaciones de posición, tamaño, forma, color, etcétera.
+
+a. Imagen
+b. Dibujo
+c. Gráfico
+d. Símbolo +
+
+
+**¿Qué formatos de archivo permiten visualizar animaciones en la Web?**
+
+a. SVF.
+b. SWF. +
+c. Gif. +
+d. MNG. +
+
+
+**Cuando importamos un vídeo en Flash directamente en la línea de tiempo, el programa nos permite hacerlo de diversas formas. ¿Cuáles son?**
+
+a. Como un componente de reproducción.
+b. Como vídeo incorporado. +
+c. Como clip de película. 
+d. Como gráfico.
+
+
+**¿Cuáles de las representaciones siguientes son válidas en los fotogramas clave?**
+
+a. Círculo negro sobre fondo verde.
+b. Círculo negro sobre fondo azul.
+c. Círculo negro sobre fondo gris. +
+d. Círculo negro sobre fondo blanco.
+
+
+Un símbolo es cualquier
+_____ que se ha añadido a la biblioteca para poder ser utilizado en uno o más proyectos de animación una o más veces.
+
+a. imagen
+b. clip de película
+c. dibujo
+d. gráfico +
+
+
+**La interpolación de forma no permite un cambio gradual de color. ¿Verdadero o falso?**
+
+a. Verdadero
+b. Falso +
+
+
+**¿Cuáles de estos programas sirven para hacer animaciones?**
+
+a. Styckz. +
+b. Flash. +
+c. Word.
+d. Windows.
+
+
+El efecto sonoro
+_____ es el único que permite modificar la envolvente del canal izquierdo añadiendo cambios de volumen en puntos intermedios.
+Pregunta 9Seleccione una:
+
+a. canal izquierdo
+b. personalizado +
+c. desvanecimiento
+d. aumento progresivo
+
+
+**Se pueden hacer animaciones utilizando reglas de estilo. ¿Verdadero o falso?**
+
+a. Verdadero +
+b. Falso
